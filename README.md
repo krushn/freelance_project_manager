@@ -32,11 +32,16 @@ You can then access the application through the following URL:
 http://localhost/freelance/web/
 ~~~
 
-For any help contact 
+
+Contact for support 
 
 Skype: kathrecha.krushn
+
 Gmail: kathrechakrushn@gmail.com
+
 Mobile: +91 8758702738
+
 Website: http://iamkrushn.com
+
 
 
