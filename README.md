@@ -10,8 +10,11 @@ DEMO
 -----------------
 
 http://iamkrushn.com/demo/freelance/web/
+
 username: admin 
+
 password: demo1admin
+
 
 INSTALLATION
 ------------
