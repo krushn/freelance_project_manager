@@ -6,6 +6,12 @@ REQUIREMENTS
 
 The minimum requirement by this project that your Web server supports PHP 5.4.0.
 
+DEMO
+-----------------
+
+http://iamkrushn.com/demo/freelance/web/
+username: admin 
+password: demo1admin
 
 INSTALLATION
 ------------
@@ -37,7 +43,7 @@ Contact for support
 
 Skype: kathrecha.krushn
 
-Gmail: kathrechakrushn@gmail.com
+Gmail: kathrechakrushn@gmail.com, me@iamkrushn.com
 
 Mobile: +91 8758702738
 
