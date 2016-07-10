@@ -1,0 +1,504 @@
+// Topnav Header Styles
+// --------------------------------------------------------------------------
+
+
+/* Drop Downs */
+
+// #topnav.navbar-default{
+// 	.img-white{display: none!important;}
+// 	.img-dark{display: block!important;}
+// }
+
+body.sidebar-collapsed {
+	#topnav {
+		.navbar-brand {
+			width: 64px;
+			img.show-on-collapse {
+				opacity: 1;
+			}
+			img:not(.show-on-collapse) {
+				opacity: 0;
+			}
+		}
+	}
+
+}
+
+#topnav {
+	margin: 0;
+	border:none; 
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	&:extend(.clearfix all);
+
+
+
+
+	// Logo
+	.navbar-brand {
+		.img-white{display: block;}
+		.img-dark{display: none;}
+		.text-hide() !important; 
+		background: white!important;
+			background: url("") no-repeat top left; // Put your logo here
+			height: @navbar-height;
+			width: @navbar-brand-width;
+			width: 240px;
+			@media (max-width: 640px) {
+				.img-white{opacity: 0!important;}
+				.img-dark{opacity: 0!important;}
+				.img-logo-dark{opacity: 1 !important;}
+				.img-logo-white{opacity: 1 !important;}
+				width: 64px;
+
+			}
+			overflow: hidden;
+			padding: 0 0px !important;
+			transition-duration: 300ms;
+			img:not(.show-on-collapse) {
+				margin: 20px auto;
+				height: 24px;
+				transition: opacity 300ms linear;
+				opacity: 1;
+
+			}
+			img.show-on-collapse {
+				position: absolute;
+				opacity: 0;
+				transition: opacity 300ms linear;
+				margin: 16px auto;
+				height: 32px;
+				left: 16px;
+				&.img-logo-white {
+					display: 1;
+				}
+				&.img-logo-dark {
+					display: none;
+				}
+			}
+		}
+		//-- Logo Code: Start - remove/modify this as you see fit
+	    &.navbar-default .navbar-brand, &.navbar-bluegraylight .navbar-brand, &.navbar-graylight .navbar-brand {} // dark logo
+	    .navbar-brand {} //white logo
+		//-- Logo Code: End
+
+
+	// Our Dropdown Menus don't lose styles on small screens, so we apply them again
+	.dropdown-menu {
+		background-color: @dropdown-bg;
+			border: 1px solid @dropdown-fallback-border; // IE8 fallback
+			border: 1px solid @dropdown-border;
+			border-radius: @border-radius-base;
+			//.box-shadow(0 4px 9px 0 rgba(0,0,0,.24));
+			box-shadow: none;
+		}
+
+	//Keep topnav toolbar from collapsing even in small screens
+	.navbar-nav .open .dropdown-menu {position: absolute;}
+
+
+	// Trigger Styles
+	.logo-area {
+		display: block;
+		float: left;
+		height: 64px;
+		&:extend(.clearfix all);
+
+		> a, > span, > div {
+			display: block;
+			float: left;
+		}
+
+		.toolbar-trigger a {
+			display: block;
+			padding: 16px 8px;
+			border-right-width: 0;
+			border-right-style: solid;
+			overflow: hidden;
+			position: relative;
+				//margin: 8px 0;
+				span.icon-bg {
+					display: block;
+					height: 32px;
+					width: 48px;
+					padding: 0;
+					line-height: 32px;
+					font-size: 16px;
+					text-align: center;
+					border-radius: 0px;
+					font-size: 16px;
+					i {
+					}
+				}
+			}
+
+			ul.navbar-nav li a {
+				padding: 4px 16px;
+				margin: 8px 0;
+				font-weight: 500;
+				line-height: 20px;
+				border-left-width: 1px;
+				border-left-style: solid;
+				text-align: center;
+				width: 48px;
+				&:last-child {border-right-width: 1px; border-right-style: solid;}
+				&:focus, &.active {background-color: transparent;}
+			}  
+
+			@media (min-width: @screen-md-min) {
+				//width: 590px;
+				width: auto;
+				height: 48px;
+				display: inline-block;
+			}	
+
+		}
+
+		// Search Stuff
+		#search-box {
+			width: 0;
+			padding-left: 16px;
+			transition-duration: 300ms;
+			@media(max-width: @screen-xs-max){
+				padding-left: 0;
+			}
+			.form-group {
+				margin-top: 14px;
+			}
+
+			#search-input {
+				transition-duration: 300ms;
+				background: none;
+			}
+		}
+
+		&.search-active {
+			#search-box {
+				width: 240px;
+			}
+			.toolbar-icon-bg:not(.stay-on-search) {
+				width: 0px;
+				&.appear-on-search {
+					width: 64px;
+				}
+			}
+		}
+
+		@media (max-width: 640px) {
+			&.search-active {
+				.toolbar-icon-bg:not(.appear-on-search), .navbar-brand {
+					width: 0px!important;
+				}
+				#search-box .form-control {
+					padding-left:32px;
+				}
+			}
+		}
+
+
+		
+	// Toolbar Icon
+	.toolbar-icon-bg {
+		width: 64px;
+		&.appear-on-search {
+			width: 0;
+		}
+		transition-duration: 300ms;
+		> a:hover, > a:focus, > a.active {background-color: transparent;}
+		&.open > a {
+			background-color: transparent;
+			&:hover {background-color: transparent;}
+			span.icon-bg { &:hover {}}
+		}
+	}
+	.toolbar.pull-right .toolbar-icon-bg {
+		> a {
+				//border-left-width: 1px;
+				//border-left-style: solid;
+				padding: 16px 8px;
+				span.icon-bg {
+					display: block; 
+					padding: 0;
+					line-height: 32px;
+					font-size: 16px; 
+					text-align: center; 
+					height: 32px; 
+					width: 48px;
+					i {}
+				}
+			}
+			&:hover {
+				span.icon-bg {}
+			}
+		}
+
+	// UserInfo
+	.userinfo {
+		padding: 0;
+		min-width: 200px;
+		li.divider {margin: 0;}
+		li a {
+			&:extend(.clearfix all);
+			padding: 10px 16px;
+			color: @gray-dark;
+			i {margin-right: 16px; color: @gray-light; width: 16px; text-align: center;}
+				// .badge {position: static; margin-top: 2px;}
+				&:hover, &:focus {
+					color: @gray-darker;
+					i {color: @gray;}
+				}
+			}
+		}
+
+	// Stylings for small screens
+	.navbar-nav {margin: 0;
+		&.toolbar {
+			>li {
+				float: left; 
+				margin-right: 0;
+				>a {padding: 14px 16px; font-weight: 500;}
+				&:last-child {margin-right: 0;}
+			}
+		}
+	}
+
+	// User Icon
+	a.username {
+		padding: 8px 0 !important;
+		&:extend(.clearfix all);
+		img {
+			height: 40px;
+			width: 40px;
+			float: right;
+			border-radius: 0;
+		}
+
+	}
+	a.nav-username {
+		padding: 0px 16px !important;
+		margin: 8px 0;
+		&:extend(.clearfix all);
+		img {
+			height: 32px;
+			width: 32px;
+			border-radius: 2px;
+			float: left;
+
+		}
+		.status {
+			position: absolute;
+			width: 0; 
+			height: 0; 
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			border-left: 6px solid #8bc34a;
+			transform: rotate(-45deg);
+			margin: 0;
+			padding: 0;
+			left: 43px;
+			top: -4px;
+		}
+		.badge.user-status {
+			position: absolute;
+			top: 12px;
+			left: 40px;
+			right: inherit;
+			font-size: 0;
+			height: 8px;
+			width: 8px;
+			padding: 0;
+			margin: 0;
+		}
+		span {
+			float: right;
+			margin-left: 8px;
+			line-height: 32px;
+			text-transform: none;
+			font-weight: 500;
+			.label {
+				line-height: 16px;
+				margin: 8px 0 8px 4px;
+			}
+		}
+
+		@media screen and (max-width: 1035px) {
+			.hidden-sm {display: none;}
+		}
+	}
+	
+	//Badges
+	.nav .badge {
+		text-align: center;
+		text-shadow: none !important;
+		min-width: inherit;
+		top: 2px;
+		right: 6px;
+		position: absolute;
+	}
+
+	// Toolbar Search
+		// @media (max-width: @grid-float-breakpoint-max) {
+			
+		// }
+
+		&.topnav-search-active .logo-area {float: none;}
+
+		.form-search {
+			padding: 16px 0;
+			&:extend(.clearfix all);
+
+			i {line-height: 32px; color: #fff}
+
+			input[type="text"] {
+				margin-left: 5px;
+				border: 0;
+				background: transparent;
+				height: 32px;
+				line-height: 32px;
+				width: 75%;
+				.placeholder(rgba(255,255,255,0.5));
+			}
+
+			i, input {float: left;}
+			i.close {float: right;}
+
+			&.active {
+				margin-left: 16px;
+				margin-right: 16px;
+				float: none;
+			}
+		}
+
+
+
+
+	// Topnav Dropdown
+	.topnav-dropdown-header, .topnav-dropdown-footer {
+		height: 40px;
+		line-height: 40px;
+		padding-left: 16px;
+		padding-right: 16px;
+		font-weight: 500;
+		font-size: @font-size-small;
+		color: @gray-50;
+	}
+	.topnav-dropdown-header {
+		border-bottom: 1px solid @border-lighter;
+		span {
+			color: @gray-dark;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+		.badge-notification{
+			color: white !important;
+			font-size: 10px !important;
+			height: 15px !important;
+			line-height: 15px;
+			width: 15px !important;
+			background: @brand-green;
+		}
+
+		span.label {
+			&:extend(.label all);
+		}
+
+	}
+	.topnav-dropdown-footer {
+		border-top: 1px solid @border-lighter;
+		a {
+			display: block; 
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+
+
+	// Notifications
+	.notifications {
+		padding: 0;
+
+			@media (max-width: @screen-xs-max) { //re-arrange position in small screen
+				//right: 10px;
+				&::before, &::after {right: 60px;}
+			}
+
+			.scroll-pane {
+				height: 290px;
+				width: 288px;
+			}
+			.notification-heading {
+				margin: 0;
+				font-size: @font-size-base;
+				font-weight: normal;
+				line-height: @line-height-base;
+				color: @gray-dark;
+				> span {color: rgba(0,0,0,0.54);}
+			}
+			.notification-time {
+				font-size: @font-size-small;
+				line-height: @line-height-small;
+				color: @gray-light;
+			}
+			.media {
+				margin-top: 0;
+				border-bottom: 1px solid @gray-100;
+				&:last-child {border-bottom: none;}
+			}
+			.media a {
+				display: block;
+				padding: 16px;
+				// background-color: @gray-50;
+				border-radius: @border-radius-base;
+				&:hover {background-color: @gray-50;}
+			}
+			.media-list {
+				.media-left {
+					padding-right: 8px;
+				}
+			}
+
+			.notification-icon {
+				height: 32px;
+				width: 32px;
+				display: block;
+				background: @gray;
+				border-radius: 50%;
+
+				i {
+					display: block;
+					text-align: center;
+					line-height: 32px;
+					width: 32px;
+					color: #fff;
+					font-size: 16px;
+				}
+			}
+
+			.notification-success .notification-icon {background: @light-green-300}
+			.notification-info    .notification-icon {background: @cyan-300}
+			.notification-danger  .notification-icon {background: @red-300}
+			.notification-warning .notification-icon {background: @amber-300}
+			.notification-primary .notification-icon {background: @light-blue-300}
+			.notification-inverse .notification-icon {background: @gray-300}
+			.notification-teal	  .notification-icon {background: @teal-300}
+			.notification-indigo  .notification-icon {background: @indigo-300}
+
+			.notification-message {
+				.avatar {
+					height: 32px;
+					width: 32px;
+				}
+			}
+		}
+
+
+	// Active Icons
+	.icon-ti, .icon-fa {line-height: 40px;}
+
+	.icon-ti {font-size: 17px;}
+	.icon-fa {font-size: 14px;}
+
+		// Exceptions
+		.userinfo {
+			.icon-fa, .icon-ti {line-height: 17px;}
+		}
+	}

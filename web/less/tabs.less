@@ -1,0 +1,240 @@
+//
+// Tabs
+// --------------------------------------------------
+
+.tab-container {
+	margin-bottom: 32px;
+
+	.tab-content {
+		border-radius: 0 @border-radius-base @border-radius-base @border-radius-base;
+		border: 1px solid @border-darker;
+		padding: 16px;
+		background-color: @panel-bg;
+		.tab-pane{
+			background: white;
+		}
+	}
+
+	.nav-tabs > li > a {border-radius: 0; padding: 9px 16px; font-weight: 500;}
+	> .nav.nav-tabs {
+		.dropdown-menu {margin-top: 0;}
+		margin-bottom: 0;
+		border-bottom: 0;
+
+		> li {
+			> a {
+				background-color: @panel-bg;
+				margin-left: -1px;
+				border: 1px solid @border-darker;
+				color: @gray-dark;
+				&:hover {background-color: @gray-50; color: @gray-darker;}
+				&:focus {background: @border-lighter;};
+			}
+			
+
+
+			&.active > a {
+				color: @gray-darker;
+				border-bottom: 1px solid #fff;
+				background: rgba(255,255,255,.12)!important;
+		
+				&:hover {background: @panel-bg;}
+			}
+		}
+
+		> li.tabdrop + li > a, >li:first-child > a {border-top-left-radius: @border-radius-base; margin-left: 0;}
+		> li.tabdrop > a, > li:last-child > a {border-top-right-radius: @border-radius-base;}
+	}
+
+
+	&.tab-left, &.tab-right {
+		> .nav-tabs.nav > li {
+			float: none; min-width: 100px;
+			&.active > a {border-bottom-color: @border-darker !important; border-top-color: @border-darker !important; background-color: #fff }
+			&:last-child > a {border-bottom: 1px solid @border-darker;}
+		}
+		.tab-content {overflow: auto; border-radius: 0 @border-radius-base @border-radius-base @border-radius-base;}
+	}
+
+
+	&.tab-left {
+		.tab-content {
+			border-radius: 0 @border-radius-base @border-radius-base @border-radius-base;
+		}
+
+		& > .nav.nav-tabs {
+			float: left;
+			margin-right: -1px;
+			> li > a {
+				margin-left: 0; 
+				border-right: 0; 
+				margin-right: 1px;
+				border-radius: 0;
+			}
+			> li.active > a 		{border-left: 1px solid @brand-primary; margin-right: 0}
+			> li:first-child > a 	{border-top-left-radius: @border-radius-base;}
+			> li:last-child > a 	{border-bottom-left-radius: @border-radius-base;}
+		}
+	}
+
+	&.tab-right {
+		.tab-content {
+			border-radius: @border-radius-base 0 @border-radius-base @border-radius-base;
+		}
+
+		& > .nav.nav-tabs {
+			float: right;
+			margin-left: -1px;
+			> li > a {
+				border-left: 0;
+				margin-left: 1px !important;
+				text-align: right;
+				border-radius: 0;
+			}
+			> li.active > a 		{border-right: 1px solid @brand-primary; margin-left: 0 !important;}
+			> li:first-child > a 	{border-top-right-radius: @border-radius-base;}
+			> li:last-child > a 	{border-bottom-right-radius: @border-radius-base;}
+		}
+	}
+
+
+	&.tab-bottom {
+		> .tab-content {
+			border-top: 1px solid @border-darker; 
+			border-radius: @border-radius-base @border-radius-base @border-radius-base 0;
+		}
+		> .nav-tabs {
+			border-bottom: none;
+			margin-top: -1px;
+			> li.active > a {
+				border-top-color: transparent !important;
+				border-bottom: 1px solid @brand-primary;
+			}
+			> li:first-child > a,  > li.tabdrop + li > a {border-bottom-left-radius: @border-radius-base; border-top-left-radius: 0;}
+			> li:last-child > a, > li.tabdrop > a {border-bottom-right-radius: @border-radius-base; border-top-right-radius: 0;}
+		}
+	}
+
+	.tabdrop .dropdown-menu li.active a {color: @gray-darker;}
+}
+
+.tab-primary      {.tab-states(@brand-primary);}
+.tab-warning      {.tab-states(@brand-warning);}
+.tab-danger       {.tab-states(@brand-danger);}
+.tab-success      {.tab-states(@brand-success);}
+.tab-info         {.tab-states(@brand-info);}
+.tab-inverse      {.tab-states(@brand-inverse);}
+
+// custom colors
+.tab-brown        {.tab-states(@brand-brown);}  
+.tab-default      {.tab-states(@border-darker);}  
+.tab-indigo       {.tab-states(@brand-indigo);}
+.tab-orange       {.tab-states(@brand-orange);}
+.tab-sky          {.tab-states(@brand-teal);}
+.tab-midnightblue {.tab-states(@brand-midnightblue);}
+.tab-magenta      {.tab-states(@brand-pink);}  
+.tab-green        {.tab-states(@brand-green);} 
+.tab-purple       {.tab-states(@brand-purple);} 
+
+
+.tab-states(@color) {
+  &.tab-container {
+  	>.nav-tabs > li.active > a {border-top-color: @color;}
+  	&.tab-left > .nav-tabs > li.active > a {border-left-color: @color;}
+  	&.tab-right > .nav-tabs > li.active > a {border-right-color: @color;}
+  	&.tab-bottom > .nav-tabs > li.active > a {border-bottom-color: @color;}
+  }
+}
+
+
+//
+// Quasi-material effect
+// --------------------------------------------------
+
+
+.material-nav-tabs.nav-tabs {
+	background: none!important;
+	border-bottom: 2px solid #DDD;
+	display: table;
+    width: 100%;
+    > li {
+    	//float: none;
+	    display: table-cell;
+	    > a {
+		    text-align: center;
+		    font-size: 15px;
+	    }
+    }
+    &.stretch-tabs {
+    	> li {
+    		float: none;
+    	}
+    }
+    &.icon-tabs {
+    	> li > a {
+    		font-size: 18px;
+    	}
+    }
+    > li.active > a,
+    > li.active > a:focus,
+    > li.active > a:hover { border-width: 0; }
+    > li > a { border: none; color: rgba(0,0,0,.30)!important; }
+    > li.active > a,
+    > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+    > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+
+}
+
+
+//
+// Accordions
+// --------------------------------------------------
+.accordion-group {
+	.accordion-item {
+		margin-bottom: 10px !important;
+		background: none;
+		padding: 0;
+		margin: 0;
+		.box-shadow(~"none");
+		border:none;
+
+		.accordion-title{
+			text-decoration: none;
+			h2 {
+				color: @gray-darker;
+				background-color: #fafbfc;
+				border: 1px solid @border-darker;
+				padding: 10px 20px;
+				border-radius: @border-radius-base;
+				margin: 0;
+				font-weight: 600;
+				font-size: @font-size-base;
+				cursor: pointer;
+				border-radius: 3px 3px 0 0;
+				&:after {
+					.opacity(0.5);
+					content:"\f107";
+					font-family: FontAwesome;
+					font-style: normal;
+					font-weight: normal;
+					float: right;
+					text-decoration: none;
+				}
+			}
+			&.collapsed h2:after {content:"\f104";.opacity(0.5)}
+		}
+
+		.accordion-body {
+			padding: 20px;
+			border: 1px solid #dadfe3;
+			border-top: none;
+		}
+	}
+}
+
+#accordion .panel-body {
+	margin-top: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}

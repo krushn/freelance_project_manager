@@ -1,0 +1,232 @@
+//profile page
+.nav-panel{
+	background: #fff!important;
+	border: medium none!important;
+	.panel-heading{
+		border-bottom: none!important;
+		background: #fff!important;
+	}
+}
+.profile-area{
+	background: @brand-danger url(../img/profile-bg-material.png);
+	background-size: 100% auto;
+	padding: 32px 16px !important;
+	color: #fff;
+	overflow: hidden;
+	h4.media-heading{color: #fff;}
+	ul.list-inline {
+		margin-bottom: 32px;
+		li a{
+			background: rgba(0, 0, 0, 0.33) none repeat scroll 0 0;
+		    border-radius: 16px;
+		    display: inline-block;
+		    font-size: 16px;
+		    height: 32px;
+		    line-height: 32px;
+		    text-align: center;
+		    width: 32px;
+		    color: rgba(255, 255, 255, 0.66);
+		    &:hover {
+		    	color: #fff;
+		    	background: rgba(0, 0, 0, 0.66) none repeat scroll 0 0;
+		    }
+		}
+	}
+	ul.demo-btns li a{
+		font-weight: 400;
+	    line-height: 32px;
+	    padding: 0 16px;
+	    border: medium none;
+	}
+	> div > a{border: 4px solid #fff;border-radius: 2px;}
+}
+.profile-tab{
+	border: 1px solid @border-darker;
+	margin-bottom: 32px;
+	background: #fff;
+	.row{
+		//height: 270px;
+		background: #fff!important;
+		div{
+			@media(max-width: 640px){
+				margin-bottom: 40px!important;
+			}
+		}
+		> div img{
+			width: 100%;
+			//height: 270px;
+		}
+	}
+	.media-body{
+		font-size: 11px;
+		color: @gray;
+		h5{
+			color: @gray-darker;
+			font-weight: 600;
+		}
+	}
+	.media-desc{
+		color: @gray-darker;
+	}
+	.clearfix{
+		padding: 8px 16px;
+		background: @brand-default;
+		.pull-right{
+			a{
+				padding: 6px 11px;
+				font-weight: normal;
+			}
+		}
+	}
+	div.col-md-12.pt-sm.pb-md{
+		background: #fff;
+		img{
+			width: 100%;
+		}
+	}
+	.form-group{
+		margin-top: 0;
+		padding-bottom: 0;
+		margin-bottom: -2px;
+	}
+	.form-control{
+		border: medium none;
+		//border-bottom: 1px solid @border-darker;
+		height: 52px;
+		padding: 16px;
+		margin: 0;
+	}
+	span.icon{
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		margin-right: 16px;
+		text-align: center;
+		font-size: 16px;
+		float: left;
+		i{
+			font-size: 16px;
+		}
+	}
+	.media{
+		padding: 16px 16px 0 16px;
+		background: #fff;
+		.media-left{
+			padding-right: 16px;
+			border-radius: 2px;
+			.media-object{
+				width: 40px;
+				height: 40px;
+				 border-radius: 2px;
+			}
+		}
+	}
+	a{
+		i{
+
+		}
+	}
+	.btn.btn-xs{line-height: 24px;}
+	.like-info{
+		background: @brand-default;
+		border-top: 1px solid @border-darker;
+		border-bottom: 1px solid @border-darker;
+		display: inline-block;
+    	width: 100%;
+    	min-height: 56px;
+    	a{
+    		i{
+    			width: 16px;
+    			height: 16px;
+    			display: inline-block;
+    			line-height: 16px;
+    			margin-right: 4px;
+    			font-size: 16px;
+    		}
+    	}
+		.like-amount{
+			display: inline-block;
+			//padding-left: 16px;
+			color: @gray;
+			font-size: 11px;
+		}
+	}
+}
+.like-comment{
+	.like-info{
+		background: #fff;
+	}
+	.media-desc{
+		font-weight: 500;
+	}
+	.comment-profile{
+		border-bottom: 1px solid @border-darker;
+		background: @brand-default!important;
+		.media-desc{
+			font-weight: 400;
+		}
+	}
+}
+.panel-profile .panel-body ul{
+	margin-top: 48px!important;
+	li{
+		a{
+			font-size: 16px;
+		}
+	}
+}
+.panel-profile{
+	.tab-pane{
+		background: white;
+	}
+	.tab-pane:nth-child(2){
+		background: transparent;
+	}
+}
+.personal-info-heading{
+	span.text{
+		text-align: left;
+		line-height: 16px;
+		padding: 16px;
+		border-bottom: 1px solid @border-darker;
+	}
+}
+.personel-info{
+	background: #fff;
+	padding: 8px 0;
+	text-align: left;
+	span.icon{
+		font-size: 16px;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		margin-right: 16px;
+		text-align: center; 
+		float: left;
+	}
+}
+
+.form-group.form-group-lg{
+	margin: 10px 0 0 0!important;
+}
+
+@media(max-width: 479px){
+	.profile-area{
+		padding: 32px 0!important;
+		div.col-md-6{
+			width: 100%;
+			float: left;
+			div.media-body{
+				padding-left: 12px!important;
+			}
+			ul{
+				text-align: left;
+			}	
+		}
+		div.col-md-6:nth-child(2n){
+			padding-left: 127px;
+		}
+	}
+}

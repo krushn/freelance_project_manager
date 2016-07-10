@@ -1,0 +1,33 @@
+.color-palette {
+
+    color: rgba(255,255,255,0.87);
+    font-size: 14px;
+    font-weight: 500;
+    // width: 1160px;
+    padding-bottom: 60px;
+    .color-group{
+        padding-left: 0px;
+        display: block;
+        list-style-type:none;
+        li.color {
+            padding: 15px;
+            .hex{
+                float: right;
+            }
+        }
+        li.divide {
+            border-top: 4px solid #fafafa;
+        }
+        li.main-color{
+            border-bottom: 4px solid #fafafa;
+            .name{
+                display: block;
+                margin-bottom: 60px;
+            }
+        }
+        li.dark{
+            color: @gray-dark;
+        }
+    }
+
+}

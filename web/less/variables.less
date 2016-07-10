@@ -1,0 +1,983 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+	
+
+
+@gray-darker:           @gray-900;
+@gray-dark:             @gray-800;
+@gray:                  @gray-500;
+@gray-light:            @gray-400;
+@gray-lighter:          @gray-300;
+
+
+
+@border-darker:            @gray-200;
+@border-lighter:           @gray-150;
+
+
+// Brand colors
+// -------------------------
+
+@brand-default:			@gray-50;
+
+@brand-inverse:			@gray-600;
+@brand-primary:         @light-blue-500;
+@brand-success:         @light-green-500;
+@brand-warning:         @amber-500;
+@brand-danger:          @red-500;
+@brand-info:            @cyan-500;
+
+@brand-brown:			@brown-500;
+@brand-indigo:			@indigo-500;
+@brand-deeppurple: 		@deep-purple-500;
+@brand-orange:			@orange-500;
+@brand-midnightblue:	@blue-gray-800;
+@brand-teal:			@teal-500;
+@brand-pink:			@pink-500;
+@brand-purple:			@purple-500;
+@brand-green:			@green-500;
+@brand-lime:			@lime-500;
+@brand-yellow:			@yellow-500;
+@brand-deeporange:		@deep-orange-500;
+@brand-blue:			@blue-500;
+@brand-blue-gray:		@blue-gray-500;
+
+
+// social
+
+@brand-facebook: 		#3b5998;
+@brand-twitter: 		#00aced;
+@brand-dribbble: 		#ea4c89;
+@brand-vimeo: 			#aad450;
+
+
+//== Scaffolding
+//
+// ## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg:               @gray-100;
+@page-title-color:		@body-bg;
+
+//** Global text color on `<body>`.
+@text-color:            @gray-dark;
+
+//** Global textual link color.
+
+@link-color:            @brand-primary;
+//** Link hover color set via `darken()` function.
+@link-hover-color:      @brand-primary;
+//** Link hover decoration.
+@link-hover-decoration: none;
+
+// Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-sans-serif:  'Roboto', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          13px;
+@font-size-large:         15px;
+@font-size-small:         11px;
+@font-size-mini:          11px;
+
+@font-size-h1:            36px;
+@font-size-h2:            30px;
+@font-size-h3:            24px;
+@font-size-h4:            18px;
+@font-size-h5:            @font-size-base;
+@font-size-h6:            11px;
+
+@font-weight-base:		  400;
+
+//** Unit-less `line-height` for use in components like buttons.
+
+@line-height-base:        1.45; // 20/14
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
+
+//** By default, this inherits from the `<body>`.
+@headings-font-family:    @font-family-base;
+@headings-font-weight:    400;
+@headings-line-height:    1.2;
+@headings-color: 		  @gray-dark;
+
+
+
+
+@footer-height: 		   32px;
+@navbar-brand-width: 	   240px;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+@padding-base-vertical:          5px;
+@padding-base-horizontal:        10px;
+
+@padding-large-vertical:         6px;
+@padding-large-horizontal:       12px;
+
+@padding-small-vertical:         3px;
+@padding-small-horizontal:       6px;
+
+@padding-xs-vertical:   		 1px;
+@padding-xs-horizontal: 		 2px;
+
+@line-height-large:              1.65;
+@line-height-small:              1.35;
+
+@border-radius-base:             2px;
+@border-radius-large:            2px;
+@border-radius-small:            2px;
+
+
+//** Global color for active items (e.g., navs or dropdowns).
+
+@component-active-color:         #fff;
+//** Global background color for active items (e.g., navs or dropdowns).
+@component-active-bg:            @gray-100; //@brand-inverse
+//** Width of the `border` for generating carets that indicator dropdowns.
+
+@caret-width-base:               4px;
+//** Carets increase slightly in size for larger components.
+@caret-width-large:              5px;
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+//** Padding for `<th>`s and `<td>`s.
+@table-cell-padding:                 10px 10px;
+@table-condensed-cell-padding:       3px 10px;
+
+//** Default background color used for all tables.
+@table-bg:                           transparent; // overall background-color
+//** Background color used for `.table-striped`.
+@table-bg-accent:                    #fcfcfc; // for striping
+//** Background color used for `.table-hover`.
+@table-bg-hover:                     @gray-50;
+@table-bg-active:                    @table-bg-hover;
+
+//** Border color for table and cell borders.
+@table-border-color:                 @border-lighter; // table and cell border
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+@btn-font-family:                @font-family-base;
+@btn-font-weight:				 600;
+@btn-border-radius: 			 @border-radius-base;
+
+@btn-regular-color:				 #fff;
+
+@btn-default-color:              @gray-dark;
+@btn-default-bg:                 @brand-default;
+@btn-default-border:             @border-darker;
+
+@btn-white-color:                @gray-dark;
+@btn-white-bg:                   #fff;
+@btn-white-border:               @border-darker;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @brand-primary;
+@btn-primary-border:             @brand-primary;
+
+@btn-success-color:              @btn-regular-color;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             @brand-success;
+
+@btn-warning-color:              @btn-regular-color;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             @brand-warning;
+
+@btn-danger-color:               @btn-regular-color;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              @brand-danger;
+
+@btn-info-color:                 @btn-regular-color;
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                @brand-info;
+
+@btn-inverse-color:	    		 @btn-regular-color;
+@btn-inverse-bg:				 @brand-inverse;
+@btn-inverse-border:             @brand-inverse;
+
+@btn-link-disabled-color:        @gray-light;
+
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+
+@input-bg:                       #fff;
+//** `<input disabled>` background color
+@input-bg-disabled:              lighten(@gray-lighter, 5%);
+
+//** Text color for `<input>`s
+@input-color:                    @gray-darker;
+//** `<input>` border color
+@input-border:                   @border-darker;
+
+// TODO: Rename `@input-border-radius` to `@input-border-radius-base` in v4
+//** Default `.form-control` border radius
+@input-border-radius:            @border-radius-base;
+//** Large `.form-control` border radius
+@input-border-radius-large:      @border-radius-large;
+//** Small `.form-control` border radius
+@input-border-radius-small:      @border-radius-small;
+
+
+//** Border color for inputs on focus
+@input-border-focus:             @gray-light;
+//** Placeholder text color
+
+@input-color-placeholder:        @gray-light;
+//** Default `.form-control` height
+@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+@input-height-large:             (floor(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+@legend-color:                   @gray-dark;
+@legend-border-color:            #e6e7e8;
+//** Background color for textual input addons
+@input-group-addon-bg:           @gray-lighter;
+//** Border color for textual input addons
+@input-group-addon-border-color: @input-border;
+
+//** Disabled cursor for form controls and buttons.
+@cursor-disabled:                not-allowed;
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+//** Background for the dropdown menu.
+@dropdown-fallback-bg:           #fff;
+@dropdown-bg:                    #fff;
+//** Dropdown menu `border-color`.
+@dropdown-border:                @border-darker;
+//** Dropdown menu `border-color` **for IE8**.
+@dropdown-fallback-border:       #ccc;
+//** Divider color for between dropdown items.
+@dropdown-divider-bg:            @border-lighter;
+
+//** Dropdown link text color.
+@dropdown-link-color:            @gray-dark;
+//** Hover color for dropdown links.
+@dropdown-link-hover-color:      @gray-darker;
+//** Hover background for dropdown links.
+@dropdown-link-hover-bg:         @dropdown-link-active-bg;
+
+//** Active dropdown menu item text color.
+@dropdown-link-active-color:     @component-active-color;
+//** Active dropdown menu item background color.
+@dropdown-link-active-bg:        @component-active-bg;
+
+//** Disabled dropdown menu item background color.
+@dropdown-link-disabled-color:   @gray-light;
+
+//** Text color for headers within dropdown menus.
+@dropdown-header-color:          @gray-light;
+
+// Note: Deprecated @dropdown-caret-color as of v3.1.0
+@dropdown-caret-color:           @gray-dark;
+
+
+//Dropdown Inverse color styles for Megamenu
+@dropdown-inverse-bg: 			@navbar-vertical-separator;
+@dropdown-inverse-color: 		@navbar-inverse-link-color;
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+@zindex-navbar:            1200;
+@zindex-dropdown:          1001;
+@zindex-popover:           1010;
+@zindex-tooltip:           1230;
+@zindex-navbar-fixed:      @zindex-navbar; //1030
+@zindex-modal-background:  1240;
+@zindex-modal:             1250;
+// Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+@grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:         32px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint:     @screen-md-min;
+//** Point at which the navbar begins collapsing.
+@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
+
+
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+@navbar-height:                    64px;
+@navbar-margin-bottom:             @line-height-computed;
+@navbar-border-radius:             0;
+@navbar-padding-horizontal:        16px; // floor(@grid-gutter-width / 2);
+@navbar-padding-vertical:          14px; // ((@navbar-height - @line-height-computed) / 2);
+@navbar-collapse-max-height:       340px;
+
+@navbar-default-color:             @gray-dark;
+@navbar-default-bg:                #fff;
+@navbar-default-border:            @border-lighter;
+
+// Navbar links
+@navbar-default-link-color:                @gray-dark;
+@navbar-default-link-hover-color:          @gray-darker;
+@navbar-default-link-hover-bg:             @gray-50; //transparent;
+@navbar-default-link-active-color:         @gray-darker;
+@navbar-default-link-active-bg:            @body-bg; //darken(@navbar-default-bg, 3%);
+@navbar-default-link-disabled-color:       @gray-light;
+@navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+@navbar-default-brand-color:               @navbar-default-link-color;
+@navbar-default-brand-hover-color:         darken(@navbar-default-link-color, 10%);
+@navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg:           @gray-50;
+@navbar-default-toggle-icon-bar-bg:        @body-bg;
+@navbar-default-toggle-border-color:       @border-darker;
+
+
+// Inverted navbar
+//
+// Reset inverted navbar basics
+@navbar-inverse-color:                      @gray-dark;
+@navbar-inverse-bg:                         @gray-darker;
+@navbar-inverse-border:                     lighten(@navbar-inverse-bg, 10%);
+
+// Inverted navbar links
+@navbar-inverse-link-color:                 @gray;
+@navbar-inverse-fallback-color:             @gray; //ie8 has no support for opacity
+@navbar-inverse-link-hover-color:           @gray-light;
+@navbar-inverse-link-hover-bg:              lighten(@navbar-inverse-bg, 5%); //#444; // transparent;
+@navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
+@navbar-inverse-link-active-bg:             @navbar-vertical-separator;
+@navbar-inverse-link-disabled-color:        darken(@navbar-inverse-color, 10%);
+@navbar-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-inverse-brand-color:                @navbar-inverse-link-color;
+@navbar-inverse-brand-hover-color:          #fff;
+@navbar-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar search
+// Normal navbar needs no special styles or vars
+@navbar-inverse-search-bg:                  @navbar-inverse-border;
+@navbar-inverse-search-bg-focus:            #fff;
+@navbar-inverse-search-border:              @navbar-inverse-bg;
+@navbar-inverse-search-placeholder-color:   @navbar-inverse-color;
+
+// Inverted navbar toggle
+@navbar-inverse-toggle-hover-bg:            @navbar-inverse-link-hover-bg;
+@navbar-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-inverse-toggle-border-color:        @navbar-inverse-border;
+
+// December Extended
+@navbar-vertical-separator: 				@navbar-inverse-border;
+
+
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+
+@nav-link-padding:                          14px 16px;
+@nav-link-hover-bg:                         @gray-lighter;
+
+@nav-disabled-link-color:                   @gray-light;
+@nav-disabled-link-hover-color:             @gray-light;
+
+@nav-open-link-hover-color:                 #fff;
+@nav-open-caret-border-color:               #fff;
+
+//== Tabs
+@nav-tabs-border-color:                     @border-darker;
+
+@nav-tabs-link-hover-border-color:          @gray-lighter;
+
+@nav-tabs-active-link-hover-bg:             @body-bg;
+@nav-tabs-active-link-hover-color:          @gray;
+@nav-tabs-active-link-hover-border-color:   @border-darker;
+
+@nav-tabs-justified-link-border-color:            @border-darker;
+@nav-tabs-justified-active-link-border-color:     @body-bg;
+
+//== Pills
+@nav-pills-border-radius:                   @border-radius-base;
+@nav-pills-active-link-hover-bg:            @component-active-bg;
+@nav-pills-active-link-hover-color:         @component-active-color;
+
+
+//== Pagination
+//
+//##
+
+@pagination-color:                     @link-color;
+@pagination-bg:                        #fff;
+@pagination-border:                    @border-darker;
+
+@pagination-hover-color:               @link-hover-color;
+@pagination-hover-bg:                  @gray-lighter;
+@pagination-hover-border:              #ddd;
+
+@pagination-active-color:              #fff;
+@pagination-active-bg:                 @brand-primary;
+@pagination-active-border:             @brand-primary;
+
+@pagination-disabled-color:            @gray-light;
+@pagination-disabled-bg:               #fff;
+@pagination-disabled-border:           #ddd;
+
+
+//== Pager
+//
+//##
+
+@pager-bg:                             @pagination-bg;
+@pager-border:                         @pagination-border;
+@pager-border-radius:                  @border-radius-base;
+
+@pager-hover-bg:                       @pagination-hover-bg;
+
+@pager-active-bg:                      @pagination-active-bg;
+@pager-active-color:                   @pagination-active-color;
+
+@pager-disabled-color:                 @pagination-disabled-color;
+
+
+//== Jumbotron
+//
+//##
+
+@jumbotron-padding:              30px;
+@jumbotron-color:                inherit;
+@jumbotron-bg:                   @gray-lighter;
+
+@jumbotron-heading-color:        inherit;
+@jumbotron-font-size:            ceil((@font-size-base * 1.5));
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+@state-warning-text:             @amber-600;
+@state-warning-bg:               @amber-100;
+@state-warning-border:           @amber-400;
+
+@state-danger-text:              @red-600;
+@state-danger-bg:                @red-100;
+@state-danger-border:            @red-400;
+
+@state-success-text:             @light-green-600;
+@state-success-bg:               @light-green-100;
+@state-success-border:           @light-green-400;
+
+@state-info-text:                @cyan-600;
+@state-info-bg:                  @cyan-100;
+@state-info-border:              @cyan-400;
+
+@state-inverse-text:			 @gray-500;
+@state-inverse-bg:				 @gray-300;
+@state-inverse-border:			 @gray-500;
+
+
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+@tooltip-max-width:           200px;
+//** Tooltip text color
+@tooltip-color:               #fff;
+//** Tooltip background color
+@tooltip-bg:                  @gray-darker;
+@tooltip-opacity:             .9;
+
+//** Tooltip arrow width
+@tooltip-arrow-width:         5px;
+//** Tooltip arrow color
+@tooltip-arrow-color:         @tooltip-bg;
+
+
+//== Popovers
+//
+//##
+
+//** Popover body background color
+@popover-bg:                          #fff;
+//** Popover maximum width
+@popover-max-width:                   276px;
+//** Popover border color
+@popover-border-color:                @border-darker;
+//** Popover fallback border color
+@popover-fallback-border-color:       #ccc;
+
+//** Popover title background color
+@popover-title-bg:                    #000;
+
+//** Popover arrow width
+@popover-arrow-width:                 10px;
+//** Popover arrow color
+@popover-arrow-color:                 #fff;
+
+//** Popover outer arrow width
+@popover-arrow-outer-width:           (@popover-arrow-width + 1);
+//** Popover outer arrow color
+@popover-arrow-outer-color:           @border-darker;
+//** Popover outer arrow fallback color
+@popover-arrow-outer-fallback-color:  #999;
+
+
+//== Labels
+//
+//##
+
+@label-font-family: 		  @font-family-base;
+@label-font-weight:			  600;
+@label-font-size:			  14px;
+@label-border-radius:		  @border-radius-small;
+
+//** Default label background color
+@label-default-bg:            @gray-light;
+//** Primary label background color
+@label-primary-bg:            @brand-primary;
+//** Success label background color
+@label-success-bg:            @brand-success;
+//** Info label background color
+@label-info-bg:               @brand-info;
+//** Warning label background color
+@label-warning-bg:            @brand-warning;
+//** Danger label background color
+@label-danger-bg:             @brand-danger;
+@label-indigo-bg:             @brand-indigo;
+@label-lime-bg:   	          @brand-lime;
+@label-inverse-bg:            @brand-inverse;
+@label-orange-bg:     		  @brand-orange;
+@label-purple-bg:             @brand-purple;
+@label-teal-bg:               @brand-teal;
+@label-deeporange-bg:         @brand-deeporange;
+@label-deeppurple-bg:         @brand-deeppurple;
+@label-green-bg:           	  @brand-green;
+@label-midnightblue-bg:    	  @brand-midnightblue;
+
+
+//** Default label text color
+@label-color:                 #fff;
+//** Default text color of a linked label
+@label-link-hover-color:      #fff;
+
+
+//== Modals
+//
+//##
+
+//** Padding applied to the modal body
+@modal-inner-padding:         20px;
+
+//** Padding applied to the modal title
+@modal-title-padding:         14px;
+//** Modal title line-height
+@modal-title-line-height:     @line-height-base;
+
+//** Background color of modal content area
+@modal-content-bg:                             #fff;
+//** Modal content border color
+@modal-content-border-color:                   rgba(0,0,0,.2);
+//** Modal content border color **for IE8**
+@modal-content-fallback-border-color:          #999;
+
+//** Modal backdrop background color
+@modal-backdrop-bg:           #000;
+//** Modal backdrop opacity
+@modal-backdrop-opacity:      .5;
+//** Modal header border color
+@modal-header-border-color:   #e5e5e5;
+//** Modal footer border color
+@modal-footer-border-color:   @modal-header-border-color;
+
+
+
+@modal-lg:                    900px;
+@modal-md:                    650px;
+@modal-sm:                    300px;
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+@alert-padding:               15px;
+@alert-border-radius:         @border-radius-base;
+@alert-link-font-weight:      bold;
+
+@alert-success-bg:            @state-success-bg;
+@alert-success-text:          @state-success-text;
+@alert-success-border:        @state-success-border;
+
+@alert-info-bg:               @state-info-bg;
+@alert-info-text:             @state-info-text;
+@alert-info-border:           @state-info-border;
+
+@alert-warning-bg:            @state-warning-bg;
+@alert-warning-text:          @state-warning-text;
+@alert-warning-border:        @state-warning-border;
+
+@alert-danger-bg:             @state-danger-bg;
+@alert-danger-text:           @state-danger-text;
+@alert-danger-border:         @state-danger-border;
+
+@alert-inverse-bg:             @state-inverse-bg;
+@alert-inverse-text:           @state-inverse-text;
+@alert-inverse-border:         @state-inverse-border;
+
+
+
+
+
+//== Progress bars
+//
+//##
+
+//** Background color of the whole progress component
+@progress-bg:                 @border-lighter;
+//** Progress bar text color
+@progress-bar-color:          #fff;
+//** Variable for setting rounded corners on progress bar.
+@progress-border-radius:      @border-radius-base;
+
+//** Default progress bar color
+@progress-bar-bg:             @brand-primary;
+//** Success progress bar color
+@progress-bar-success-bg:     @brand-success;
+//** Warning progress bar color
+@progress-bar-warning-bg:     @brand-warning;
+//** Danger progress bar color
+@progress-bar-danger-bg:      @brand-danger;
+//** Info progress bar color
+@progress-bar-info-bg:        @brand-info;
+
+//** Custom progress bar colors
+@progress-bar-inverse-bg:	  		@brand-inverse;
+@progress-bar-green-bg:		  		@brand-green;
+@progress-bar-lime-bg:		  		@brand-lime;
+@progress-bar-indigo-bg:	  		@brand-indigo;
+@progress-bar-purple-bg:	  		@brand-purple;
+@progress-bar-orange-bg:	  		@brand-orange;
+@progress-bar-teal-bg:	  			@brand-teal;
+@progress-bar-midnightblue-bg:	  	@brand-midnightblue;
+@progress-bar-deeporange-bg:	  	@brand-deeporange;
+
+
+
+
+//== List group
+//
+//##
+
+//** Background color on `.list-group-item`
+@list-group-bg:                 #fff;
+//** `.list-group-item` border color
+@list-group-border:             @border-darker;
+//** List group border radius
+@list-group-border-radius:      @border-radius-base;
+
+//** Background color of single list items on hover
+@list-group-hover-bg:           @gray-100;
+//** Text color of active list items
+@list-group-active-color:       #fff;
+//** Background color of active list items
+@list-group-active-bg:          @brand-primary;
+//** Border color of active list elements
+@list-group-active-border:      @list-group-active-bg;
+//** Text color for content within active list items
+@list-group-active-text-color:  lighten(@list-group-active-bg, 40%);
+
+//** Text color of disabled list items
+@list-group-disabled-color:      @gray-light;
+//** Background color of disabled list items
+@list-group-disabled-bg:         @gray-lighter;
+//** Text color for content within disabled list items
+@list-group-disabled-text-color: @list-group-disabled-color;
+
+@list-group-link-color:         @gray-dark;
+@list-group-link-hover-color:   @list-group-link-color;
+@list-group-link-heading-color: @gray-darker;
+
+//== Panels
+//
+//##
+
+
+@panel-bg:                    #fff;
+@panel-inner-border:          @border-darker;
+@panel-border-radius:         @border-radius-base;
+//** Border color for elements within panels
+@panel-inner-border:          @border-darker;
+@panel-footer-bg:             @gray-50;
+
+@panel-default-text:          @gray;
+@panel-default-border:        @border-darker;
+@panel-default-heading-bg:    @gray-50;
+
+@panel-primary-text:          @light-blue-50;
+@panel-primary-border:        @light-blue-600;
+@panel-primary-heading-bg:    @brand-primary;
+
+@panel-success-text:          @light-green-50;
+@panel-success-border:        @light-green-600;
+@panel-success-heading-bg:    @brand-success;
+
+@panel-info-text:             @cyan-50;
+@panel-info-border:           @cyan-600;
+@panel-info-heading-bg:       @brand-info;
+
+@panel-warning-text:          @yellow-50;
+@panel-warning-border:        @yellow-600;
+@panel-warning-heading-bg:    @brand-warning;
+
+@panel-danger-text:           @red-50;
+@panel-danger-border:         @red-600;
+@panel-danger-heading-bg:     @brand-danger;
+
+@panel-inverse-text:          @gray-50;
+@panel-inverse-border:        @gray-600;
+@panel-inverse-heading-bg:    @brand-inverse;
+
+// @panel-danger-heading-bg:     @state-danger-bg;
+
+//== Thumbnails
+//
+//##
+
+//** Padding around the thumbnail image
+@thumbnail-padding:           5px;
+//** Thumbnail background color
+@thumbnail-bg:                @body-bg;
+//** Thumbnail border color
+@thumbnail-border:            @border-lighter;
+//** Thumbnail border radius
+@thumbnail-border-radius:     @border-radius-base;
+
+//** Custom text color for thumbnail captions
+@thumbnail-caption-color:     @text-color;
+//** Padding around the thumbnail caption
+@thumbnail-caption-padding:   9px;
+
+
+//== Wells
+//
+//##
+
+@well-bg:                     @border-lighter;
+@well-border:                 @border-darker;
+
+
+//== Badges
+//
+//##
+@badge-color:                 #fff;
+//** Linked badge text color on hover
+@badge-link-hover-color:      #fff;
+@badge-bg:                    @gray-light;
+//** Badge text color in active nav link
+@badge-active-color:          @link-color;
+//** Badge background color in active nav link
+@badge-active-bg:             #fff;
+
+@badge-font-family:           @font-family-base;
+@badge-font-weight:           500;
+@badge-line-height:           @line-height-small;
+@badge-border-radius:         8px;
+
+
+
+//== Breadcrumbs
+//
+//##
+
+@breadcrumb-padding-vertical:   @padding-small-vertical;
+@breadcrumb-padding-horizontal: @padding-small-horizontal;
+//** Breadcrumb background color
+@breadcrumb-bg:                 @border-lighter;
+//** Breadcrumb text color
+@breadcrumb-color:              @gray-light;
+//** Text color of current page in the breadcrumb
+@breadcrumb-active-color:       @gray;
+//** Textual separator for between breadcrumb elements
+@breadcrumb-separator:          "/";
+
+
+// Carousel
+// ------------------------
+
+@carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
+
+@carousel-control-color:                      #fff;
+@carousel-control-width:                      15%;
+@carousel-control-opacity:                    .5;
+@carousel-control-font-size:                  20px;
+
+@carousel-indicator-active-bg:                #fff;
+@carousel-indicator-border-color:             #fff;
+
+@carousel-caption-color:                      #fff;
+@carousel-heading-color: 					  @carousel-caption-color;
+
+
+//== Close
+//
+//##
+@close-font-weight:           bold;
+@close-color:                 @gray-darker;
+
+@close-text-shadow:           0 1px 0 #fff;
+
+
+//== Code
+//
+//##
+@code-color:                  #c7254e;
+@code-bg:                     #f9f2f4;
+@kbd-color:                   #fff;
+@kbd-bg:                      #333;
+
+@pre-bg:                      @gray-100;
+@pre-color:                   @gray-dark;
+@pre-border-color:            #ccc;
+@pre-scrollable-max-height:   340px;
+
+
+//== Type
+//
+//##
+
+//** Horizontal offset for forms and lists.
+@component-offset-horizontal: 180px;
+//** Text muted color
+@text-muted:                  @gray-light;
+//** Abbreviations and acronyms border color
+@abbr-border-color:           @gray-light;
+//** Headings small color
+@headings-small-color:        @gray-light;
+//** Blockquote small color
+@blockquote-small-color:      @gray-light;
+//** Blockquote font size
+@blockquote-font-size:        (@font-size-base * 1.25);
+//** Blockquote border color
+@blockquote-border-color:     @gray-lighter;
+//** Page header border color
+@page-header-border-color:    @gray-lighter;
+//** Width of horizontal description list titles
+@dl-horizontal-offset:        @component-offset-horizontal;
+//** Horizontal line color.
+@hr-border:                   @gray-lighter;
+
+
+//== Miscellaneous
+//
+//##
+
+//** Horizontal line color.
+@hr-border:                   @border-lighter;
+
+//** Horizontal offset for forms and lists.
+@component-offset-horizontal: 180px;
+
+
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+@container-tablet:            ((720px + @grid-gutter-width));
+//** For `@screen-sm-min` and up.
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:           ((940px + @grid-gutter-width));
+//** For `@screen-md-min` and up.
+@container-md:                @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop:      ((1140px + @grid-gutter-width));
+//** For `@screen-lg-min` and up.
+@container-lg:                 @container-large-desktop;
+
+
+
+// Boxed Layout
+// -------------------------
+@boxed-width: 							1140px;
+@boxed-background: 						rgba(0,0,0,0.9);
+
+@sidebar-static-width: 					240px;

@@ -1,0 +1,301 @@
+//scaffolding.less
+
+	html {-ms-overflow-style: scrollbar;} //Always show scrollbar in IE10+ instead of disappearing
+
+	:focus, :active {outline:0 !important;}
+	::-moz-focus-inner {border:0 !important;}
+
+	body {font-weight: @font-weight-base;}
+	a {outline: none; cursor: pointer}
+
+	strong {font-weight: 500 !important;}
+
+	hr.outsider {
+		margin-left: -16px;
+		margin-right: -16px;
+		border-top: 1px solid @border-lighter;
+	}
+
+	hr.outsider-dashed {
+		margin-left: -16px;
+		margin-right: -16px;
+		border-top: 1px dashed @border-lighter;
+	}
+
+	hr.dashed {
+		border-top: 1px dashed @border-darker;
+	}
+
+	hr {
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 400;}
+
+	h1, h2, h3, h4, h5, h6 {
+		small {
+			font-size: 66%;
+			color: rgba(0, 0, 0, 0.30);
+		}
+	}
+
+
+	.row.no-gutter {
+		margin-left: 0;
+		margin-right: 0;
+
+	 	[class*='col-']:not(:first-child),
+		[class*='col-']:not(:last-child) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+// Buttons
+	.btn-icon-rounded {
+	    width: 32px!important;
+	    height: 32px!important;
+	    padding: 0!important;
+	    margin: 0!important;
+	    border-radius: 50%!important;
+	}
+	.btn-break {
+		word-wrap: break-word;
+    	white-space: pre;
+
+	}
+
+//code.less
+	kdb, samp {
+		font-family: @font-family-monospace;
+	}
+
+	pre {
+		margin-bottom: 32px;
+		&.prettyprint {
+	    	margin-bottom: 16px; //@line-height-computed;
+	    }
+	}
+
+//labels.less
+	.label {
+		padding: 0em 0.3em;
+		font-family: @label-font-family;
+		font-weight: @label-font-weight;
+		border-radius: @label-border-radius;
+		font-size: 85%;
+		display: inline-block;
+		text-transform: uppercase;
+		line-height: @line-height-small;
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	// Colors
+	.label-orange {
+		.label-variant(@label-orange-bg);
+	}
+	.label-lime {
+		.label-variant(@label-lime-bg);
+	}
+	.label-inverse {
+		.label-variant(@label-inverse-bg);
+	}
+	.label-teal {
+		.label-variant(@label-teal-bg);
+	}
+	.label-deeporange {
+		.label-variant(@label-deeporange-bg);
+	}
+	.label-midnightblue {
+		.label-variant(@label-midnightblue-bg);
+	}
+	.label-green {
+		.label-variant(@label-green-bg);
+	}
+	.label-indigo {
+		.label-variant(@label-indigo-bg);
+	}
+
+	.label-purple {
+		.label-variant(@label-purple-bg);
+	}
+
+	.label-deeppurple {
+		.label-variant(@label-deeppurple-bg);
+	}
+
+.badge {
+	padding: 0px 5px;
+	font-family: @badge-font-family;
+	font-size: 12px;
+}
+
+// Colors
+// Contextual variations (based on label colors)
+
+	.badge-primary  	{.label-variant(@label-primary-bg);}
+	.badge-success  	{.label-variant(@label-success-bg);}
+	.badge-info     	{.label-variant(@label-info-bg);}
+	.badge-warning  	{.label-variant(@label-warning-bg);}
+	.badge-danger   	{.label-variant(@label-danger-bg);}
+	.badge-orange   	{.label-variant(@label-orange-bg);}
+	.badge-deeporange   {.label-variant(@label-deeporange-bg);}
+	.badge-midnightblue {.label-variant(@label-midnightblue-bg);}
+	.badge-green   		{.label-variant(@label-green-bg);}
+	.badge-inverse   	{.label-variant(@label-inverse-bg);}
+	.badge-lime   		{.label-variant(@label-lime-bg);}
+	.badge-teal   		{.label-variant(@label-teal-bg);}
+
+	.sidebar nav.widget-body>ul.acc-menu {
+		.badge.badge-primary  {.label-variant(@label-primary-bg);}
+		.badge.badge-indigo  {.label-variant(@label-indigo-bg);}
+		.badge.badge-orange  {.label-variant(@label-orange-bg);}
+		.badge.badge-success  {.label-variant(@label-success-bg);}
+		.badge.badge-info     {.label-variant(@label-info-bg);}
+		.badge.badge-warning  {.label-variant(@label-warning-bg);}
+		.badge.badge-danger   {.label-variant(@label-danger-bg);}
+		.badge.badge-green   {.label-variant(@label-green-bg);}
+		.badge.badge-deeporange   {.label-variant(@label-deeporange-bg);}
+		.badge.badge-lime   {.label-variant(@label-lime-bg);}
+		.badge.badge-midnightblue   {.label-variant(@label-midnightblue-bg);}
+	}
+
+
+// Dropdown
+
+	.dropdown-menu {
+		left: auto; 
+		right: 0;
+	}
+
+	.dropdown {
+		.dropdown-menu {
+			transform-origin: top right;
+			transform: scale(0);
+			transition-duration: 300ms;
+			display: block;
+		}
+
+		&.open {
+			.dropdown-menu {
+				transform: scale(1);
+			}
+		}
+
+		&.right {
+			.dropdown-menu {
+				transform-origin: top left;
+				left: 0;
+				right: auto;
+			}
+		}
+	}
+
+	.dropup {
+		.dropdown-menu {
+			transform-origin: bottom left;
+			transform: scale(0);
+			transition-duration: 300ms;
+			display: block;
+		}
+
+		&.open {
+			.dropdown-menu {
+				transform: scale(1);
+			}
+		}
+	}
+
+//popovers.less
+	.popover {
+		.box-shadow(0 4px 9px 0 rgba(0, 0, 0, 0.24));
+		padding: 0;
+		border: 0;
+	}
+
+	.popover-title {
+		padding: 8px;
+		background-color: @gray-50;
+		border-radius: @border-radius-base @border-radius-base 0 0;
+		color: @gray;
+		font-size: @font-size-small;
+		font-weight: 500;
+		text-transform: uppercase;
+		border: 0;
+	}
+	.popover-content {
+		padding: 16px;
+	}
+
+// Forms
+
+.form-horizontal {
+	.form-group-sm, .form-group-lg {
+		margin-left: -15px !important;
+		margin-right: -15px !important;
+	}
+}
+
+.form-inline {
+	.form-group {
+		margin-top: 0px;
+	}
+}
+
+.input-icon {
+	position: relative;
+	> i, .icon {
+		position: absolute; 
+		display: block;
+		margin: 10px 8px; 
+		line-height: 14px;
+		.text-muted(); 
+		//.fa-fw();
+		&:hover {text-decoration: none;}
+	}
+	> .form-control {padding-left: 35px;}
+	
+	&.right {
+		> i, .icon {right: 0px; float: right;}
+		> .form-control {padding: 6px 35px 6px 10px;}
+		&.input-group > i,  &.input-group > .icon {right: 0;}
+	}
+
+	&.input-group.left {> .form-control {padding-left: 30px; .border-left-radius(@border-radius-base)}}
+}
+.input-icon-sm {
+	> i {margin: 7px;}
+}
+
+.input-daterange .input-group-addon {
+	background-color: auto !important;
+	border: none !important;
+}
+
+
+//Table
+	.table-no-border {
+		margin-bottom: 0;
+		td {
+			border-top:0 !important;
+			vertical-align: middle !important;
+			i {vertical-align: middle;}
+		}
+	}
+
+
+
+
+// tooltip
+
+.tooltip-inner {
+	white-space: nowrap;
+	background-color: rgba(0, 0, 0, 0.87);
+	padding: 8px;
+}
+
+// Alerts
+
+// Hide Alerts on default for animation
+.animated-content .alert:not(.ui-pnotify-container) {visibility: hidden}

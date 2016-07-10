@@ -1,0 +1,114 @@
+//Leftbar
+	.inbox-menu { 
+		a.list-group-item {
+			i {
+				margin-right: 6px;
+				&.circle-red     {.circle-color-variant(@brand-danger) !important;}
+	    		&.circle-green   {.circle-color-variant(@brand-success) !important;}
+	    		&.circle-purple  {.circle-color-variant(@brand-deeppurple) !important;}
+			}
+		}
+	}
+
+	.circle-color-variant(@icon-color) {color: @icon-color;}
+
+
+// Inbox Mail List
+
+	.inbox-mail-heading {
+		margin: 0;
+		padding: 8px;
+		border-radius: @border-radius-base @border-radius-base 0 0;
+		background: @gray-50;
+		border-bottom: 1px solid @border-lighter;
+
+		.btn-lg .checkbox-inline {padding-top: 0; height: 16px; margin-top: -6px;}
+	}
+
+	.panel-inbox {
+		.panel-body {
+			background: #fff;
+			padding: 0 !important;
+			.inbox-compose-form {
+			}
+			.table-inbox {
+				
+				margin: 0;
+				.inbox-msg-attach, .inbox-msg-time {.hidden-xs()}
+				.inbox-msg-time {.text-right()}
+				.unread {
+					.inbox-msg-from, .inbox-msg-time {font-weight: 500;}
+				}
+				.inbox-msg-snip {.label {margin-right: 8px;}}
+				.inbox-from-name {font-weight: 500;}	
+				.inbox-msg-check {}
+				.inbox-msg-time {color: @gray;}
+				tbody > tr > td {cursor: pointer; padding: 14px 10px;}
+			}
+		}
+
+
+		.input-group-lg .tokenfield {
+			min-height: 40px;
+			&.input-lg {padding: 6px 12px;}
+			&.input-lg .token-input {
+				height: 26px;
+				line-height: 26px;
+				margin: 0;
+			}
+			.token {
+				height: 24px;
+				margin: 1px;
+				border: 0;
+				border-radius: @border-radius-base;
+				background-color: @gray-lighter;
+				.token-label {
+					line-height: 24px;
+				}
+				.close {
+					line-height: 24px;
+					font-size: 18px;
+				}
+			}
+		}
+
+		.inbox-mail-footer {
+			margin: 0;
+			padding: 8px;
+			border-radius: 0 0 @border-radius-base @border-radius-base;
+			background: @gray-50;
+			border-top: 1px solid @border-lighter;
+
+			.btn .checkbox-inline {padding-top: 0; height: 16px; margin-top: -2px;}
+
+		}
+	}
+
+
+
+
+.panel-inbox-read {
+	.panel-body {
+
+		.inbox-read-title {
+			margin: 0;
+		}
+		.inbox-read-details {
+			.inbox-read-sender-avatar {float: left; height: 24px; width: 24px; margin-right: 8px;}
+			.inbox-read-sender-name {float: left; display: inline-block; padding: 2px 0; font-weight: 500; }
+			.inbox-read-sender-email {display: inline-block; padding: 2px 0; color: @gray; }
+			.inbox-read-sent-info {float: left; display: inline-block; padding: 2px 0; font-size: @font-size-base; color: @gray; }
+			.btn-group {float: right;}
+
+
+		}
+		.msg-attachments {
+			.well .list-inline {margin: 0;}
+		}
+	}
+
+	.inbox-mail-heading {
+		margin: -16px -16px 16px;
+	}
+	
+}

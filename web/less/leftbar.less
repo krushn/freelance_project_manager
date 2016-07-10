@@ -1,0 +1,442 @@
+//
+// December
+// (c) KaijuThemes
+//
+// Leftbar/Sidebar
+// --------------------------------------------------
+
+
+// --------------
+// Sidebar widgets
+
+
+.sidebar .widget {
+	&:not(.stay-on-collapse) {
+		transition-duration: 300ms;
+		transform: scale(1);
+		transform-origin: top left;
+	}
+
+	.widget-heading, li.nav-separator {
+		font-size: @font-size-small;
+		font-weight: 500;
+		line-height: 16px;
+		text-transform: uppercase;
+		display: block;
+		padding: 16px;
+		background: transparent !important;
+		margin-top: 8px;
+		&:empty {
+			font-size: 0;
+			padding: 4px 0px;
+		}
+	}
+
+	&#widget-profileinfo {
+		height: 87px;
+		overflow: hidden;
+	}
+
+	.widget-body {
+		.userinfo {
+			padding: 18px 0px 15px 15px;
+			position: relative;
+			width: 240px;
+			background: url("../img/bg.jpg") center left;
+			.avatar {
+				height: 50px;
+				width: 50px;
+				margin: 0 auto;
+			}
+
+			.acct-dropdown {
+				display: none;
+				position: absolute;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.3);
+				width: 100%;
+				left: 0;
+				padding: 6px;
+				color: rgba(255,255,255,.87);
+				text-transform: uppercase;
+				font-size: @font-size-small;
+			}
+			.info {
+				padding: 8px 0 8px 0;
+				.username {
+					font-size: @font-size-h4;
+					line-height: 24px;
+					display: block;
+					text-align: left;
+					padding-left: 64px;
+					color: rgba(255,255,255,.87);
+				}
+				.useremail {
+					font-size: @font-size-small;
+					line-height: @line-height-small;
+					display: block;
+					text-align: center;
+					text-align: left;
+					padding-left: 64px;
+					color: rgba(255,255,255,.87);
+				}
+			}
+			.online-status {
+				display: inline-block;
+				width: 14px;
+				height: 14px;
+				margin-right: 8px;
+				border-radius: 50%;
+				top: 2px;
+				position: relative;
+				&.online {
+					background-color: @green-500;
+				}
+			}
+			.user-dropdown{
+				float: right;
+				a{
+
+				}
+				.dropdown-menu{
+					position: absolute;
+					li{
+						span{
+							padding-left: 8px;
+						}
+					}
+				}
+			}
+		}
+
+
+		.mini-progressbar {
+			padding: 16px;
+			font-size: @font-size-small;
+			.pull-left {}
+			.pull-right {}
+			.progress {
+				height: 4px; 
+				margin-bottom: 0; 
+			}
+		}
+	}
+
+}
+
+/* Sidebar Menu */
+
+
+.sidebar nav.widget-body>ul.acc-menu {
+	white-space: normal; 
+	margin: 0; 
+	padding-left: 0 !important; 
+	list-style-type: none;
+	
+	> li:first-child > a {border-top: 0}
+
+	.divider {
+		height: 0px; width: 100%; 
+		margin: 0; overflow: hidden; 
+	}
+	
+	a {text-decoration: none;}
+	ul {padding: 8px 0;padding-left: 0 !important; list-style: none;}
+	ul, ul li a {border-top: none; box-shadow: none; }
+	
+	//Main Menu Styles - Level 1
+	li, li a {white-space: nowrap;}
+	li a {display: block; padding: 8px 16px; position: relative; font-weight: 500;transition-duration: 300ms;}
+
+	// Level 1 Icon styles
+	> li > a > span.icon {
+	    border-radius: 2px;
+	    display: inline-block;
+	    height: 32px;
+	    line-height: 32px;
+	    margin-right: 16px;
+	    text-align: center;
+	    width: 32px;
+	    font-size: 16px;
+	}
+	
+	// Submenu Styles - Level 2
+	ul li a {padding: 8px 16px 4px 64px;font-weight: 400;line-height: 32px;}
+	   li.active > a {font-weight: 500;}
+	ul li.active:not(.open)>a {font-weight: 500;}
+	   li ul {display: none;}
+	
+	ul ul {padding: 0;} //Removes the extra stacked padding
+	
+	// All other levels
+	li li li a {padding-left: 72px;} //level 3
+	ul ul ul li a {padding-left: 88px} // level 4
+	ul ul ul ul li a {padding-left: 104px} // level 5
+
+	li.disabled-link a {
+   		cursor: @cursor-disabled;
+   		font-style: italic;
+	}
+}
+
+
+
+
+//Arrows
+.sidebar nav.widget-body>ul.acc-menu li.hasChild {
+	&>a {position: relative; &:extend(.clearfix all);}
+
+	&>a:before {
+		.opacity(0.25);
+		content: "keyboard_arrow_right";
+		transition-duration: 100ms;
+	}
+
+	&.open>a:before {
+		transform: rotateZ(90deg);
+	}
+
+	&>a:before, 
+	&.open>a:before,
+	 {
+		font-family: 'Material Icons';
+		font-weight: normal;
+		font-style: normal;
+		font-size: 24px;
+		line-height: 32px;
+		letter-spacing: normal;
+		text-transform: none;
+		display: inline-block;
+		white-space: nowrap;
+		word-wrap: normal;
+		direction: ltr;
+		-webkit-font-feature-settings: 'liga';
+		-webkit-font-smoothing: antialiased;
+		float: right;
+	}
+	&.open ul li a:before{padding-top: 0;}
+}
+
+//.sidebar nav.widget-body>ul.acc-menu li.hasChild li.hasChild a:before {top: 4px;}
+
+// Arrow on collapse (first level, always shows opened)
+body.sidebar-collapsed .sidebar nav.widget-body>ul.acc-menu>li.hasChild>a:before {content:""}
+body.sidebar-collapsed .sidebar nav.widget-body>ul.acc-menu>li.hasChild:hover>a:before  {
+	content: "keyboard_arrow_right"; 
+	.opacity(0.25);
+	transform: rotateZ(90deg);
+}
+
+//Turn arrow on sidebear collapsed hover
+body.sidebar-collapsed {.sidebar nav.widget-body>ul.acc-menu li.hasChild:hover>a:before {content: "keyboard_arrow_right";}}
+ 
+
+//Necessary for Sidebar to work properly
+.sidebar-collapsed .hasChild {
+	> ul.acc-menu {display: none !important;}
+	&:hover > ul.acc-menu {display: block !important;}
+}
+
+
+
+
+// ----------------------------
+// Collapse at small screens
+// ----------------------------
+
+@media screen and (max-width: 768px) {
+	.static-sidebar-wrapper {
+		//.transition(~'width 0ms ease-out');
+	}
+
+	.static-content-wrapper {overflow: hidden;} // Because offcanvas
+
+	body.sidebar-collapsed .static-sidebar-wrapper {
+		width: 0px;
+	}
+}
+
+.static-content-wrapper {background: @body-bg}
+.static-content {transition: width 250ms ease-in-out}
+
+
+// --------------
+// Collapsed
+// --------------
+@media screen and (min-width: 768px) {
+	body.sidebar-collapsed {
+
+		//Apart from some widgets, hide everything
+		.sidebar {
+			.widget:not(.stay-on-collapse) {transform:scale(0);}
+			.widget#widget-profileinfo {
+				height: 0;
+				transform: scale(0.27);
+			}
+			.widget.stay-on-collapse {
+				.widget-heading, li.nav-separator {
+					font-size: 0;
+					padding: 4px 0;
+				}
+
+				li.nav-separator:hover {
+					width: auto !important;
+				}
+			}
+		}
+
+		.sidebar nav.widget-body>ul.acc-menu .badge,
+		.sidebar nav.widget-body>ul.acc-menu .label {
+			position: absolute;
+			left: 28px;
+			top: 10px;
+		}
+
+		//Sidebar as collapsed
+		.static-sidebar-wrapper {
+			&, & > div.stay-on-collapse {
+				white-space: nowrap;
+				width: 64px;
+				overflow: visible;
+			}
+			.widget nav.widget-body > ul.acc-menu ul {border-bottom-right-radius: 0;}
+			.widget nav.widget-body > ul > li {
+				white-space: nowrap;
+				position: relative;
+				> a {border-radius: 0; padding: 11px 17px;}
+				border-radius: 0;
+				&.hasChild {
+					> a {border-radius: 0;}
+					border-radius: 0;
+				}
+
+				&:hover {
+					width: 248px;
+					z-index: 1512;
+
+					>ul {
+						display: block;
+						position: absolute;
+						left: 64px;
+						width: 200px;
+						>li>a {padding-left: 16px; padding-right: 16px;}
+						>li li>a {padding-left: 32px; padding-right: 16px;}
+						>li li li>a {padding-left: 48px; padding-right: 16px;}
+						>li li li li>a {padding-left: 64px; padding-right: 16px;}
+					}
+				}
+
+				&.active {
+					> ul {display: none !important;}
+					&:hover {
+						> ul {display: block !important;}
+					}
+				}
+			}
+		}
+	}
+
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li:first-child:hover {
+		border-bottom-right-radius: 0;
+	}
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li:hover > a {
+		box-shadow: none;
+		border-top-right-radius: @border-radius-small;
+		border-bottom-right-radius: @border-radius-small;
+	}
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu ul li a{
+		padding: 7px 12px 7px 64px;
+	}
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li:hover {
+		border-top-right-radius: @border-radius-small;
+		border-bottom-right-radius: @border-radius-small;
+		.label, .badge {
+			position: absolute;
+		  	left: 28px;
+		  	top: 10px;
+		}
+	}
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li.hasChild:hover > a {
+		border-bottom-right-radius: 0;
+	}
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li > a > span.icon {
+		margin-right: 32px;
+	}
+
+	body.sidebar-collapsed .static-sidebar-wrapper .widget nav.widget-body > ul.acc-menu > li > ul {
+		box-shadow: none;
+		border-bottom-right-radius: @border-radius-small;
+		width: 184px;
+	}
+}
+
+
+// -------------------------
+// Scrollbars on the Sidebar
+// -------------------------
+
+.sidebar-scroll .static-sidebar {
+	position: fixed !important;
+	top: 50px;
+	bottom: 0px;
+}
+
+@media (max-width: 767px) {
+	.static-sidebar {
+		position: fixed !important;
+		top: 50px;
+		bottom: 0px;
+		
+		overflow-y: auto;
+	}
+}
+
+
+
+
+// Badges
+
+.sidebar nav.widget-body>ul.acc-menu .badge,
+.sidebar nav.widget-body>ul.acc-menu .label {
+	position: absolute;
+  	left: 30px;
+  	top: 6px;
+}
+
+
+// Labels 
+
+.sidebar nav.widget-body>ul.acc-menu .label {
+  	z-index: 1;
+}
+.sidebar nav.widget-body>ul.acc-menu>li.hasChild ul li .label {
+	top: inherit;
+	position: inherit;
+	left: inherit;
+	right: inherit;
+}
+
+
+//sidebar collapsed
+/*
+.sidebar-collapsed {
+	#widget-profileinfo {
+		.userinfo {
+			padding: 0;
+			width: auto;
+			position: relative;
+			.dropdown {display: none;}
+			.avatar {
+			    padding-top: 12px;
+			    padding-bottom: 12px;
+			    width: 40px;
+			}
+		}
+		.info {
+			display: none;
+		}
+	}
+}*/

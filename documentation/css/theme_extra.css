@@ -1,0 +1,86 @@
+/*
+ * Sphinx doesn't have support for section dividers like we do in
+ * MkDocs, this styles the section titles in the nav
+ *
+ * https://github.com/tomchristie/mkdocs/issues/175
+ */
+.wy-menu-vertical span {
+    line-height: 18px;
+    padding: 0.4045em 0.809em;
+    display: block;
+    position: relative;
+    font-size: 90%;
+    color: #838383;
+}
+
+/*
+ * Long navigations run off the bottom of the screen as the nav
+ * area doesn't scroll.
+ *
+ * https://github.com/tomchristie/mkdocs/pull/202
+ */
+.wy-nav-side {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/*
+ * Fix wrapping in the code highlighting
+ *
+ * https://github.com/tomchristie/mkdocs/issues/233
+ */
+code {
+    white-space: pre;
+}
+
+/* Table */
+
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 15px;
+}
+
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td,
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th {
+    padding: 6px 10px;
+    line-height: 1.5;
+    vertical-align: top;
+    border-top: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+table > tbody > tr:nth-of-type(odd) {
+	background-color: rgb(245, 245, 245);
+}
+
+/* Google Code Prettify */
+
+.pln {color:#48484C;}
+.kwd {color:#1E347B;}
+.lit {color:#195F91;}
+.tag {color:#008;}
+.fun {color:#DC322F;}
+
+pre.prettyprint {background-color:#F7F7F9;border:1px solid #E1E1E8;margin-bottom:20px 0!important;padding:10px;}
+pre.prettyprint.linenums {box-shadow:40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset;}
+
+ol.linenums {color:#1E347B;margin:0;}
+
+ol.linenums li {color:#BEBEC5;line-height:18px;padding-left:12px;text-shadow:0 0 0 #FFF;}
+
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 {list-style:normal;}
+li.L1,li.L3,li.L5,li.L7,li.L9 {background:#eee;}
+
+.str,.atv {color:#D14;}
+.com,.pun,.opn,.clo {color:#93A1A1;}
+.typ,.atn,.dec,.var {color:teal;}

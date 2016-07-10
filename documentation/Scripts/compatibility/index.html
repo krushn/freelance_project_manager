@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compatibility Fixes - Paper Admin</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script type="text/javascript" src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> Paper Admin</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../../unpacking/index.html">Unpacking</a>
+            </li>
+        
+
+    
+        
+        <span>Page Structure</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Layouts/layout/index.html">Layout</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Layouts/LayoutModifiers/index.html">Layout Modifiers</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Styles</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Styles/less/index.html">LESS and CSS</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Styles/fonts/index.html">Fonts</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Styles/icons/index.html">Icons</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Scripts</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../application/index.html">Application Scripts</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugins/index.html">Plugins</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../wijets/index.html">Wijets</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../bootstrap/index.html">Bootstrap</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href="index.html">Compatibility Fixes</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#data-tables">Data Tables</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#form-validation-stepy-plugin">Form Validation / Stepy Plugin</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#parsleyjs">Parsley.js</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../demo/index.html">Demo Files</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>The Basics of Liquid</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Grunt/Liquid/index.html">Liquid</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Other Info</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../faq/index.html">Frequently Asked Questions</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../changelog/index.html">Changelog</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../contact/index.html">Contact</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../../index.html"></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    <li>Compatibility Fixes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <p>Some plugins listed requires special modifications to work with Bootstrap 3, and thus, the theme.</p>
+<h2 id="data-tables">Data Tables</h2>
+<p>Datatables has built in support for jQueryUI, however, to make it play nicely with Bootstrap 3, include the dataTables.bootstrap.js script, and the dataTables.bootstrap.css and dataTables.fontAwesome.css files.</p>
+<p>All other functions to initialize the table remains the same, however we also recommend adding a placeholder for overall UX/UI look</p>
+<pre><code>$(document).ready(function() {
+    $('#example').dataTable();
+    $('.dataTables_filter input').attr('placeholder','Search...');
+});
+</code></pre>
+
+<h2 id="form-validation-stepy-plugin">Form Validation / Stepy Plugin</h2>
+<p>Add the following line of code after you call the <code>.stepy()</code> plugin. This ensures that the back and next buttons are properly indented to the <code>panel-footer</code>. jQuery.steppy.js has been lightly modified with classnames used in Bootstrap 3</p>
+<pre><code>$('.stepy-navigator').wrapInner('&lt;div class=&quot;pull-right&quot;&gt;&lt;/div&gt;');
+</code></pre>
+
+<p>Form Validation / jQuery Validation Plugin</p>
+<pre><code>Add these properties to the jQuery Validation plugin to make it work with Paper. Note that this is not the plugin demonstrated in the Form Validation demo of the site but just with the wizard. The jQuery Validator support is built in to the Wizard
+
+$('#form').validate({
+    errorClass: &quot;help-block&quot;,
+    validClass: &quot;help-block&quot;,
+    highlight: function(element, errorClass,validClass) {
+       $(element).closest('.form-group').addClass(&quot;has-error&quot;);
+    },
+    unhighlight: function(element, errorClass,validClass) {
+        $(element).closest('.form-group').removeClass(&quot;has-error&quot;);
+    }
+});
+</code></pre>
+
+<h2 id="parsleyjs">Parsley.js</h2>
+<p>Add these properties whenever you use Parsley before loading <em>parsley.js</em></p>
+<pre><code>window.ParsleyConfig = {
+      successClass: 'has-success'               // Class name on each valid input
+    , errorClass: 'has-error'                   // Class name on each invalid input
+    , errorElem: '&lt;span&gt;&lt;/span&gt;'            // each field constraint fail in an li
+    , errorsWrapper: '&lt;span class=&quot;help-block&quot;&gt;&lt;/span&gt;' // ul elem that would receive errors’ list
+    , errorTemplate: &quot;&lt;div&gt;&lt;/div&gt;&quot;          // li elem that would receive error message
+    , classHandler: function(el) {
+        return el.$element.closest(&quot;.form-group&quot;);
+    }
+};
+</code></pre>
+
+<p>More information: http://parsleyjs.org/doc/annotated-source/defaults.html</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../demo/index.html" class="btn btn-neutral float-right" title="Demo Files"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../bootstrap/index.html" class="btn btn-neutral" title="Bootstrap"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../bootstrap/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../demo/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+
+</body>
+</html>

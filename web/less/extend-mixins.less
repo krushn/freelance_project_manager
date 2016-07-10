@@ -1,0 +1,152 @@
+.block {display: block   !important;}
+.inline {display: inline !important;}
+
+
+
+// Button sizes
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+
+// Improving on bootstrap's mixins
+
+.responsive-visibility() {
+	display: block !important;
+	tr& { display: table-row !important; }
+	th&,
+	td& { display: table-cell !important; }
+	.btn-group&, .btn-group-vertical&, .btn& {display: inline-block !important;}
+	span&, i& {display: inline !important;}
+}
+
+.responsive-invisibility() {
+	display: none !important;
+	tr& { display: none !important; }
+	th&,
+	td& { display: none !important; }
+	.btn-group&, .btn-group-vertical&, .btn&,span&, i& {display: none !important;}
+}
+
+
+//Woah
+
+// RGBA colours in IE via a LESS mixin
+.rgba(@colour, @alpha) {
+	@alphaColour: hsla(hue(@colour), saturation(@colour), lightness(@colour), @alpha);
+	@ieAlphaColour: argb(@alphaColour);
+
+  background-color: @colour; // Fallback for older browsers
+  background-color: @alphaColour; 
+  
+  // IE hacks
+  zoom: 1; // hasLayout
+  background-color: transparent\9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 8+
+      filter:  ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})";  // IE 6 & 7 
+  }
+
+// Alternative Button Styles
+
+.btn-alt-states(@border) {
+
+	color: @border;
+	background-color: rgba(255, 255, 255, 0);
+	border-color: @border;
+	border-width: 1px;
+	border-style:solid;
+	.box-shadow(~"none");
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		border-color: @border;
+		background-color: @border;
+		color: #fff;
+	}
+
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus {
+			box-shadow: none !important;
+			border-color: desaturate(@border,50%);
+			color: desaturate(@border,50%);
+		}
+		&:active,
+		&.active {
+			border-color: @border;
+			background-color: darken(@border,15%);
+			color: #fff;
+		}
+	}
+
+  .ink {
+    background-color: lighten(@border, 15%);
+  }
+
+  &.dropdown-toggle {border-width: 1px}
+  &.dropdown-toggle.alt-border {border-width: 1px 1px 1px 1px;}
+}
+
+// page-tabs
+
+.page-tabs {
+	.nav-tabs {
+		border: none;
+	}
+	background: @page-title-color !important;
+	padding: 0 20px !important;
+
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+		border: 1px solid transparent !important;  
+	}
+
+	.nav-tabs > li > a:hover {
+		border-color: transparent transparent;
+		background-color: rgba(255, 255, 255, 0.25);
+	}
+
+	.nav-tabs > li {margin: 0 !important;}
+}
+
+
+// alert
+
+.alert-variant(@background; @border; @text-color) {
+	background-color: @background;
+	border-color: @border;
+	&, h1, h2, h3, h4, h5, h6, small {color: rgba(255,255,255,.87);}
+
+	hr {
+		border-top-color: darken(@border, 5%);
+	}
+	.alert-link {
+		color: darken(@text-color, 10%);
+	}
+}
+
+
+// Puts an rgba overlay on top of an image
+
+.overlay-on-image(@image, @overlay) {
+	background-image: linear-gradient(to bottom, @overlay, @overlay), url(@image);
+	background-image: -moz-linear-gradient(top, @overlay, @overlay), url(@image);
+	background-image: -o-linear-gradient(top, @overlay, @overlay), url(@image);
+	background-image: -ms-linear-gradient(top, @overlay, @overlay), url(@image);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(@overlay), to(@overlay)), url(@image);
+	background-image: -webkit-linear-gradient(top, @overlay, @overlay), url(@image);
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}

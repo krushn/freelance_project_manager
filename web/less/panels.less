@@ -1,0 +1,595 @@
+//Panel Layout
+
+// Panel Structure
+	.panel, .panel-heading, .panel-body, .panel-footer {
+		&:extend(.clearfix all);
+	}
+
+	.panel {
+		position              : relative;
+
+		&.no-shadow {box-shadow: none !important;}
+
+		//Panel Heading styles
+		.panel-heading {
+			h2 {
+				height      : 100%;
+				width       : auto;
+				float       : left;
+				position    : relative;
+				ul & {padding: 0 !important;}
+			}
+			.panel-ctrls {
+				width   : auto;
+				float   : right;
+				padding : 0;
+				margin  : 0;
+				line-height: 0;
+				.button-icon, .dropdown{
+					float           : right;
+					position        : relative;
+					text-align      : center;
+					cursor 			: pointer;
+					&:hover 		{text-decoration : none;}
+					&:first-child 	{margin-right: 0;}
+					&.custom-icon 	{float: left;}
+					.material-icons {
+						line-height: .80;
+					}
+				}
+			}
+			.panel-loader {
+				float               : right;
+				background-repeat   : no-repeat;
+				background-position : center center;
+				display             : none;
+			}
+			&:empty {border-width: 0; height: 2px;}
+
+			// Tabs
+			.nav > li > a:hover, .nav > li > a:focus {background: none}
+			.nav-tabs {
+				float: right;
+				margin-top: 0;
+				border-bottom: none;
+				li {
+					i {margin: 0 !important;}
+					&.open { //for the tabdrop
+						> a, >a:focus , >a:active, >a:visited {
+							z-index: 5;
+							background: @gray-50;
+						}
+						.dropdown-menu {
+							&, &:focus {z-index: 3;}
+						}
+					}
+				}
+			}
+		}
+		.collapsed .panel-heading {border-radius: @border-radius-base}
+
+		// Content
+		.panel-body{
+			width                 : 100%;
+			position              : relative;
+
+			&.no-padding	  {
+				padding: 0px;
+				> table {margin: 0; > tbody > tr > td, > thead > tr > th {padding: 10px 16px;}}
+				&.table-responsive {margin: 0 !important; border: 0 !important;}
+			}
+		}
+
+		// Scrolls
+		.panel-scroll {
+			overflow-y: scroll;
+			.scrollbar-custom();
+		}
+		
+		// All Border Radius
+		&, .panel-body {border-radius: @panel-border-radius;}
+		.panel-heading {.border-top-radius(@panel-border-radius - 0);}
+		.panel-heading	+ .panel-body, .panel-editbox + .panel-body {.border-top-radius(0);}
+
+		&.panel-collapsed .panel-heading {
+			.border-bottom-radius(@panel-border-radius - 0);
+		}
+		&.panel-collapsed.editbox-open .panel-editbox {
+			border-bottom: none;
+		}
+		&.editbox-open .panel-heading {.border-bottom-radius(0);}
+
+
+		// Footer
+		.panel-footer {
+			&.no-padding	  {padding: 0px;}
+		}
+	}
+
+
+// Panel Styles
+
+	.panel {
+		background-color  : @gray-50;
+		box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0px 1px 1px 0 rgba(0,0,0,.12)!important;
+		border-radius 		  : @border-radius-base;
+		background-color      : #fff;
+		margin                : 0 0 32px 0;
+		//overflow              : hidden;
+
+		.panel-controls {
+			position: absolute;
+		    right: 0px;
+		    padding: 8px;
+		    color: white;
+		    z-index: 1;
+		    > .togglebutton {
+				float: left;
+				margin-right: -9px;
+				margin-top: 2px;
+			}
+		    > .btn-icon-rounded > span {
+			    color: rgba(255,255,255,0.30);
+				font-size: 20px;
+			    line-height: 32px;
+		    }
+		    > .btn-icon-rounded > span.inverted {
+		    	color: rgba(0,0,0,0.30)
+		    }
+		    > .dropdown-menu {
+		        margin-right: 8px;
+		    }
+		}
+		.panel-heading {
+			color : @gray;
+			background-color: @gray-50;
+			padding     : 0px 16px 0px 16px;	
+			line-height : 48px;
+			//border-bottom: 1px solid @border-darker!important;
+			h2 {
+				font-size   : @font-size-base;
+				font-weight : 500;
+				padding 	: 14px 0 14px;
+				margin      : 0;
+				line-height : 20px;
+				opacity: 0.75;
+				text-transform: uppercase;
+				i {
+					margin-right: 8px;
+					&.separator {
+						height: 32px;
+						width: 1px;
+						display: inline-block;
+						margin: 8px 16px;
+					}
+				}
+			}
+			.panel-ctrls {
+				margin-right: -8px;
+				i {
+					&.separator {
+						height: 32px;
+						width: 1px;
+						display: inline-block;
+						margin: 8px 16px;
+					}
+				}
+				.button-icon {
+					margin: 8px 0;
+					line-height: 16px;
+					padding: 8px 0;
+					width: 32px;
+					height: 32px;
+					border-radius: @border-radius-base;
+					&.btn {margin: 8px 0;}
+				}
+			}
+			.panel-loader {
+				width               : 14px;
+				height              : 14px;
+				margin              : 17px 0px 0px 0px;
+			}
+			.nav-tabs {
+				background: none;
+			}
+		}
+		
+		.panel-body{
+			h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {display: block; margin-top: 4px;}
+			background-color : #fff;
+			font-size             : @font-size-base;
+			padding				  : 16px;
+			&.no-padding	  {
+				.alert {margin: 32px !important;}
+			}
+			&.panel-tb-padding	  {padding: 16px 0px;}
+			&.panel-lr-padding	  {padding: 0 16px;}
+
+			&.scroll-pane > .scroll-content {padding: 16px;}
+		}
+
+		.panel-footer {
+			padding: 16px;
+			background-color: #fff;
+			border-radius: 0 0 @border-radius-base @border-radius-base;
+			.expense{
+				@media(max-width:980px){
+					padding-left: 0!important;
+				}
+			}
+			.easypiechart{
+				margin-right: 0!important;
+			}
+		}
+
+
+		//Rotate Panel when dragging
+		&.ui-sortable-helper {
+			.rotate(~"1deg");
+			//.transition(~"transform 0.1s ease");
+			//.transition(~"-webkit-transform 0.1s ease");
+		}
+	}
+
+	.panel-placeholder {
+		border-radius         : @border-radius-base;
+		margin-bottom         : 32px;
+		padding               : 0;
+		background-color	  : @border-lighter;
+		border                : 2px dashed @border-darker;
+	}
+
+// Tab Styles
+	.panel .panel-heading {
+		.nav-tabs li {
+			margin-bottom: 0;
+			a { 
+				border: none;
+				color: @gray;
+				font-weight: 500;
+				padding: 0 16px;
+				line-height: 48px;
+				border-radius: 0;
+
+			}
+			&:hover {
+				a {
+					color: @gray-darker;
+					
+					background: @brand-default;
+				}
+			}
+			&:focus {
+				a {
+					color: @gray-darker;
+					background: none;
+					background: @gray-lighter;
+				}
+			}
+			&.active {
+				a {
+					background: #fff;
+					font-weight: 500;
+					color: @gray-darker;
+					box-shadow: none;
+					background-color: #fff!important
+				}
+				>a {color: @gray-darker !important;}
+				&:hover>a {color: @gray-darker !important; background: #fff;}
+			}
+		}
+
+		h2 > ul.nav-tabs {
+			> li > a {padding: 0 16px;font-weight: 400!important;background: #fff;margin-bottom: -2px;}
+			margin: -14px 0px -14px -16px;	
+			li.active a {font-weight: 400 !important;color: ;border-bottom: 2px solid @brand-primary;}
+			li.tabdrop + li > a {border-top-left-radius: @border-radius-base;}
+		}
+
+		//Tabdrops
+
+		li.tabdrop {
+			a {
+				border-top-left-radius: 0 !important;
+				border-top-right-radius: 0 !important;
+			}
+			ul a {
+				padding: 6px 16px !important;
+				line-height: 1.45 !important;
+				font-weight: normal !important;
+
+			}
+			&.active a {box-shadow: none;}
+
+			&.open {
+				> a, >a:hover, >a:focus, >a:active, >a:visited,
+				a, a:hover {
+					color: @gray-darker !important;
+					background: #fff !important;
+				}
+
+				a {
+					color: @gray !important;
+					font-weight: 500 !important;
+					&:hover, &:focus, &:active {
+						color: @gray-darker;
+						background: @dropdown-link-hover-bg;
+					}
+				}
+
+				.active a {
+					color: @gray-darker !important;
+				}
+			}
+		}
+	}
+
+
+// Making variations of panels using Mixin
+	.panel-variated(@heading-text-color, @heading-background-color, @panel-border-color) {
+		border-color: @panel-border-color;
+
+		.panel-heading {
+			color: @heading-text-color;
+			background-color: @heading-background-color;
+			border-color: @panel-border-color;
+			h2 {
+				color: @heading-text-color;
+				i.separator {background-color: rgba(red(@heading-text-color),green(@heading-text-color),blue(@heading-text-color),0.125);}
+			}
+			
+			.panel-ctrls .button-icon {
+				color: rgba(red(@heading-text-color),green(@heading-text-color),blue(@heading-text-color),0.5);
+				&:hover {
+					color: @heading-text-color; 
+					background-color: rgba(red(@heading-text-color),green(@heading-text-color),blue(@heading-text-color),0.125);
+				}
+			}
+
+			.panel-ctrls i.separator {background-color: rgba(red(@heading-text-color),green(@heading-text-color),blue(@heading-text-color),0.125);}
+
+			.nav-tabs li > a {color:rgba(255,255,255,0.5);}
+			.nav-tabs li:hover > a {color: #fff;background: @gray-50;};
+		}
+
+
+	}
+
+
+// Generate the colors
+	.panel {
+		&.panel-inverse {.panel-variated(@panel-inverse-text, @panel-inverse-heading-bg, @panel-inverse-border);}
+		&.panel-primary {.panel-variated(@panel-primary-text, @panel-primary-heading-bg, @panel-primary-border);}
+		&.panel-success {.panel-variated(@panel-success-text, @panel-success-heading-bg, @panel-success-border);}
+		&.panel-warning {.panel-variated(@panel-warning-text, @panel-warning-heading-bg, @panel-warning-border);}
+		&.panel-danger  {.panel-variated(@panel-danger-text, @panel-danger-heading-bg, @panel-danger-border);}
+		&.panel-info    {.panel-variated(@panel-info-text, @panel-info-heading-bg, @panel-info-border);}
+
+		&.panel-brown   {.panel-variated(@brown-50, @brand-brown, @brown-600);}
+		&.panel-indigo  {.panel-variated(@indigo-50, @brand-indigo, @indigo-600);}
+		&.panel-orange  {.panel-variated(@orange-50, @brand-orange, @orange-600);}
+		&.panel-midnightblue {.panel-variated(@blue-gray-50, @brand-midnightblue, @blue-gray-900);}
+		&.panel-teal    {.panel-variated(@teal-50, @brand-teal, @brand-teal);}
+		&.panel-pink 	{.panel-variated(@pink-50, @brand-pink, @brand-pink);}
+		&.panel-purple  {.panel-variated(@purple-50, @brand-purple, @brand-purple);}
+		&.panel-green   {.panel-variated(@green-50, @brand-green, @brand-green);}
+		&.panel-lime 	{.panel-variated(@lime-50, @brand-lime, @brand-lime);}
+		&.panel-bluegray 	{.panel-variated(@blue-gray-50, @blue-gray-500, @blue-gray-500);}
+		&.panel-bluegraylight 	{.panel-variated(@blue-gray-500, @blue-gray-50, @blue-gray-50);}
+		&.panel-deeppurple   {.panel-variated(@deep-purple-50, @brand-deeppurple, @brand-deeppurple);}
+		&.panel-yellow   	{.panel-variated(@yellow-900, @brand-yellow, @brand-yellow);}
+		&.panel-deeporange {.panel-variated(@deep-orange-50, @brand-deeporange, @brand-deeporange);}
+		&.panel-blue 	{.panel-variated(@blue-50, @brand-blue, @brand-blue);}
+		&.panel-indigo 	{.panel-variated(@indigo-50, @brand-indigo, @brand-indigo);}
+		&.panel-pink 	{.panel-variated(@pink-50, @brand-pink, @brand-pink);}
+		&.panel-black 	{.panel-variated(@gray-50, @gray-900, @gray-900);}
+		&.panel-gray 	{.panel-variated(@gray-50, @gray-500, @gray-500);}
+		&.panel-default 	{.panel-variated(@gray-700, @gray-25, @gray-25);}
+		&.panel-white 	{.panel-variated(@gray-500, #fff, #fff);}
+
+		&.panel-transparent {
+			background-color: transparent !important;
+			box-shadow: none !important;
+			.panel-heading {
+				background-color: transparent !important;
+				.nav-tabs li a {border-radius: 24px !important;}
+			}
+			.panel-body {background-color: transparent !important;}
+		}
+
+
+		&.panel-default, &.panel-white {
+			.panel-heading .nav-tabs li{
+				a { color: @gray;}
+				&:hover a {color: @gray-darker;}
+				&.active {
+					a {background: #fff;color: @gray-darker;}
+					&:hover>a {background: #fff;}
+				}
+			}
+		}
+	}
+
+/* Helpers ----------- */
+
+
+//Sortable Panels
+[data-widget]:not([data-widget-static]) .panel-heading { //.panel-sortable
+	cursor: move;
+}
+
+// .ui-sortable-helper.panel{
+// 	box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
+// }
+
+// .ui-sortable [class*="col-"] {
+// 	min-height: 40px;
+// }
+
+
+//Panel Groups
+
+.panel-group {
+	margin-bottom: 32px;
+	position: relative;
+
+	> .panel {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border-radius: @border-radius-base;
+		overflow: hidden;
+
+		//border: 0;
+		.panel-body {
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+			margin-top: 0;
+		}
+	}
+	.panel + .panel {
+		margin-top: 16px;
+	}
+
+	.panel-heading a:after {
+    	font-family: 'FontAwesome';
+    	content: "\f107";    
+    	float: right; 
+    	color: grey; 
+	}
+	.panel-heading a.collapsed:after {
+	    content: "\f104";
+	}
+}
+
+// Gekoers
+
+.blockLoader {
+	position:absolute; 
+	width:100%; 
+	height:100%; 
+	top:0; left: 0;
+	.rgba(black, 0.7);
+}
+
+
+
+// Colorpicker
+
+
+.panel-toolbar-editbox,.panel-toolbar-colorbox {
+	&.panel-collapsed .panel-heading{
+		.border-bottom-radius(0)
+	}
+}
+
+.panel-editbox {
+	padding: 16px;
+  	display: none; 
+  	position: absolute;
+  	z-index: 2;
+  	right: 40px;
+  	width: 176px;
+
+  	background-color: @dropdown-bg;
+  	border-radius: @border-radius-base;
+	&:extend(.dropdown-menu.arrow all);
+
+	&:before, &:after {right: 8px;}
+
+  	.box-shadow(0 4px 9px rgba(0,0,0,.12));
+
+	.panel-collapsed & {
+		.border-bottom-radius(@border-radius-base);
+	}
+}
+
+.panel-color-list {
+	padding: 16px !important;
+	text-align: left;
+	margin: 0;
+	font-size: 0;
+	min-width: 176px;
+	.list-unstyled();
+	.list-inline();
+	&:before, &:after {right: 8px !important;}
+	.box-shadow(0 4px 9px rgba(0,0,0,.12));
+	li {
+		margin: 1px;
+		padding: 0;
+		span {
+			border-radius: @border-radius-base; 
+			display: block;
+			height: 16px !important;
+			width: 16px !important;
+			&:hover {cursor: pointer;}
+		}
+	}
+	&.text-center {text-align: center;}
+}
+
+
+
+
+
+span[data-style="panel-info"] 		{background-color: @brand-info;}
+span[data-style="panel-primary"] 		{background-color: @brand-primary;}
+span[data-style="panel-blue"] 		{background-color: @brand-blue;}
+span[data-style="panel-indigo"] 		{background-color: @brand-indigo;}
+span[data-style="panel-deeppurple"] 		{background-color: @brand-deeppurple;}
+span[data-style="panel-purple"]  		{background-color: @brand-purple;}
+span[data-style="panel-pink"]    		{background-color: @brand-pink;}
+span[data-style="panel-danger"]    		{background-color: @brand-danger;}
+span[data-style="panel-teal"]    		{background-color: @brand-teal;}
+span[data-style="panel-green"]    		{background-color: @brand-green;}
+span[data-style="panel-success"]    		{background-color: @brand-success;}
+span[data-style="panel-lime"]    		{background-color: @brand-lime;}
+span[data-style="panel-yellow"]    		{background-color: @brand-yellow;}
+span[data-style="panel-warning"]    		{background-color: @brand-warning;}
+span[data-style="panel-orange"]    		{background-color: @brand-orange;}
+span[data-style="panel-deeporange"]    		{background-color: @brand-deeporange;}
+span[data-style="panel-midnightblue"]    		{background-color: @brand-midnightblue;}
+span[data-style="panel-bluegray"]    		{background-color: @blue-gray-500;}
+span[data-style="panel-bluegraylight"]    		{background-color: @blue-gray-50;}
+span[data-style="panel-black"]    		{background-color: @gray-900;}
+span[data-style="panel-gray"]    		{background-color: @gray-500;}
+span[data-style="panel-default"]    		{background-color: @gray-50;}
+span[data-style="panel-white"]    		{background-color: #fff; border: 2px solid @red-300;}
+span[data-style="panel-brown"]    		{background-color: @brand-brown;}
+
+
+
+
+
+// Hide Panels on default for animation
+.animated-content .panel:not(.no-animate) {visibility: hidden}
+
+
+
+
+.chart-div{
+	h3{
+		color: @gray-900;
+		font-weight: 600;
+		text-align: center;
+	}
+	p{
+		color: @gray-500;
+		text-align: center;
+	}
+}
+@media(max-width: 980px){.col-md-4.chart-div {
+    float: left;
+    padding-left: 14px;
+    width: 33.333%;
+}}
+.icon-bg {
+	background-color: @gray-25;
+	height: 24px;
+	width: 24px;
+	text-align: center;
+	padding: 0;
+	line-height: 24px;
+	font-size: 16px;
+	border-radius: @border-radius-base;
+}
+

@@ -1,0 +1,217 @@
+//
+// December
+// (c) KaijuThemes
+//
+// Tile
+// --------------------------------------------------
+
+// Info Tile Base Styles
+
+	.info-tile {
+		margin: 0px 0px 32px;
+		box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),1px 1px 1px 0 rgba(0,0,0,.12)!important;
+		position: relative;
+		overflow: hidden;
+		border-radius: @border-radius-base;
+		display: table !important;
+		border: 0;
+		width: 100%;
+
+		.stats, .info{
+			display: table-cell;
+			//width: 50%;
+			padding: 16px;
+			vertical-align: middle;
+		}
+
+		.tile-heading {
+			text-align: center;
+			height: 16px;
+			line-height: 16px;
+			font-weight: 400;
+			opacity: 0.7;
+			font-size: @font-size-small;
+			text-transform: uppercase;
+			display: block;
+		}
+		
+		.tile-content{
+			text-align: center;
+			color: @gray;
+			font-weight: 400;
+			margin: 8px 0;
+			font-size: @font-size-base;
+			text-transform: uppercase;
+			display: block;
+			.tile-icon {
+				font-size: 56px;
+				color: #fafafa;
+				opacity: .4;
+			}
+		}
+		.tile-body {
+			text-align: center;
+			//color: @gray-darker;
+			font-size: @font-size-h2;
+			font-weight: 300;
+			line-height: 40px;
+			position: relative;
+			z-index: 1;
+		}
+		.tile-footer {
+			text-align: center;
+			font-size: @font-size-small;
+			position: absolute;
+			//right: 12px;
+			bottom: 8px;
+		}
+		.tile-footer-extra{
+			position: relative;
+			text-align: left;
+			.progress{margin: 8px 0 0 0;height: 4px;}
+		}
+
+//		.tile-icon {
+//			position: absolute;
+//			height: 72px;
+//			width: 72px;
+//			border-radius: 2px;
+//			text-align: center;
+//			font-size: 36px;
+//			display: block;
+//			line-height: 72px;
+//			right: 16px;
+//		}
+	}
+
+
+	.info-tile-variant(@tile-icon-color, @tile-icon-bg) {
+
+		//.tile-icon {color: @tile-icon-color; background: @tile-icon-bg;}
+	}
+
+	.info-tile {
+		&.tile-warning 		{.info-tile-variant (#fff, @amber-500);}
+		&.tile-success 		{.info-tile-variant (#fff, @light-green-500);}
+		&.tile-teal 		{.info-tile-variant (#fff, @teal-400 );}
+		&.tile-lime 		{.info-tile-variant (#fff, @lime-500);}
+		&.tile-danger  		{.info-tile-variant (#fff, @red-400);}
+		&.tile-info    		{.info-tile-variant (#fff, @cyan-400);}
+		&.tile-green   		{.info-tile-variant (#fff, @green-400);}
+		&.tile-primary   	{.info-tile-variant (#fff, @light-blue-500);}
+		&.tile-gray		   	{.info-tile-variant (#fff, @gray-500);}
+		&.tile-orange   	{.info-tile-variant (#fff, @orange-500);}
+		&.tile-blue   		{.info-tile-variant (#fff, @blue-400);}
+		&.tile-green   		{.info-tile-variant (#fff, @green-400);}
+		&.tile-purple   	{.info-tile-variant (#fff, @purple-500);}
+		&.tile-indigo   	{.info-tile-variant (#fff, @indigo-400);}
+		&.tile-brown   		{.info-tile-variant (#fff, @brown-400);}
+		&.tile-midnighblue  {.info-tile-variant (#fff, @blue-gray-500);}
+	}
+
+	// Alternate
+	.info-tile-variant-alt(@tile-icon-bg, @tile-icon-color) {
+
+		.stats {background-color: lighten(@tile-icon-bg, 5%); color: @tile-icon-color; .tile-heading, .tile-body {color: @tile-icon-color;}}
+		.info {background-color: @tile-icon-bg; color: @tile-icon-color; .tile-heading, .tile-body {color: @tile-icon-color;}}
+		//.tile-icon {color: @tile-icon-color; background: @tile-icon-bg;}
+	}
+
+	.info-tile.info-tile-alt {
+		&.tile-warning 		{.info-tile-variant-alt (@amber-500, @amber-50);}
+		&.tile-success 		{.info-tile-variant-alt (@light-green-500, @light-green-50);}
+		&.tile-teal 		{.info-tile-variant-alt (@teal-500, @teal-50 );}
+		&.tile-lime 		{.info-tile-variant-alt (@lime-600, @lime-75);}
+		&.tile-danger  		{.info-tile-variant-alt (@red-400, @red-50);}
+		&.tile-info    		{.info-tile-variant-alt (@cyan-500, @cyan-50);}
+		&.tile-green   		{.info-tile-variant-alt (@green-500, @green-50);}
+		&.tile-primary   	{.info-tile-variant-alt (@light-blue-500, @light-blue-50);}
+		&.tile-gray		   	{.info-tile-variant-alt (@gray-500, @gray-50);}
+		&.tile-orange   	{.info-tile-variant-alt (@orange-500, @orange-50);}
+		&.tile-blue   		{.info-tile-variant-alt (@blue-500, @blue-50);}
+		&.tile-green   		{.info-tile-variant-alt (@green-500, @green-50);}
+		&.tile-purple   	{.info-tile-variant-alt (@purple-500, @purple-50);}
+		&.tile-indigo   	{.info-tile-variant-alt (@indigo-500, @indigo-50);}
+		&.tile-brown   		{.info-tile-variant-alt (@brown-500, @brown-50);}
+		&.tile-midnighblue  {.info-tile-variant-alt (@blue-500, @blue-gray-500);}
+	}
+
+
+	// .info-tile-variant-alt(@tile-icon-color, @tile-icon-bg) {
+	// 	background: @tile-bg;
+	// 	.tile-heading 	{color: @tile-heading-color;}
+	// 	.tile-icon		{color: @tile-icon-color; background: @tile-icon-bg}
+	// 	.tile-body 		{color: #fff !important}
+	// 	.tile-footer, .tile-footer-extra {color: @tile-badge-color !important;}
+	// }
+
+	// .info-tile.info-tile-alt {
+	// 	&.tile-warning 		{.info-tile-variant-alt (@amber-500, 		@amber-200, 		@gray-900, @amber-100, 		@amber-200 		);}
+	// 	&.tile-success 		{.info-tile-variant-alt (@light-green-500, 	@light-green-300,	@gray-900, @light-green-100,	@light-green-200);}
+	// 	&.tile-teal 		{.info-tile-variant-alt (@teal-500, 		@teal-300, 			@gray-900, @teal-100, 			@teal-200 		);}
+	// 	&.tile-lime 		{.info-tile-variant-alt (@lime-500, 		@lime-300, 			@gray-900, @lime-100, 			@lime-200 		);}
+	// 	&.tile-danger  		{.info-tile-variant-alt (@red-500, 			@red-300,			@gray-900, @red-100, 			@red-200 		);}
+	// 	&.tile-info    		{.info-tile-variant-alt (@cyan-500, 		@cyan-300, 			@gray-900, @cyan-100, 			@cyan-200 		);}
+	// 	&.tile-green   		{.info-tile-variant-alt (@green-500, 		@green-300, 		@gray-900, @green-100, 		@green-200 		);}
+	// 	&.tile-primary   	{.info-tile-variant-alt (@light-blue-500, 	@light-blue-300,	@gray-900, @light-blue-100,	@light-blue-200 );}
+	// 	&.tile-inverse   	{.info-tile-variant-alt (@gray-500, 		@gray-300, 			@gray-900, @gray-100, 			@gray-200 		);}
+	// 	&.tile-orange   	{.info-tile-variant-alt (@orange-500, 		@orange-300, 		@gray-900, @orange-100, 		@orange-200 	);}
+	// 	&.tile-blue   		{.info-tile-variant-alt (@blue-500, 		@blue-300, 			@gray-900, @blue-100, 			@blue-200 		);}
+	// 	&.tile-green   		{.info-tile-variant-alt (@green-500, 		@green-300, 		@gray-900, @green-100, 		@green-200 		);}
+	// 	&.tile-purple   	{.info-tile-variant-alt (@purple-500, 		@purple-300, 		@gray-900, @purple-100, 		@purple-200 	);}
+	// 	&.tile-indigo   	{.info-tile-variant-alt (@indigo-500, 		@indigo-300, 		@gray-900, @indigo-100, 		@indigo-200 	);}
+	// 	&.tile-brown   		{.info-tile-variant-alt (@brown-500, 		@brown-300, 		@gray-900, @brown-100, 		@brown-200 		);}
+	// 	&.tile-blue-gray   	{.info-tile-variant-alt (@blue-gray-500, 	@blue-gray-300, 	@gray-900, @blue-gray-100, 	@blue-gray-200 	);}
+	// 	&.tile-gray   		{.info-tile-variant-alt (@gray-500, 		@gray-400, 			@gray-900, @gray-200, 			@gray-300 		);}
+	// }
+
+
+
+// Sparkline Blocks
+
+.sparkline-block {
+	> span, > div {display: block;}
+	.sparkline-title {color: @gray; font-size: @font-size-base;}
+	.sparkline-info {color: @gray-darker; font-size: @font-size-h3; margin-bottom: 8px;}
+	padding: 16px 0;
+}
+
+
+
+// Hide Tiles on default for animation
+.animated-content .info-tile {visibility: hidden}
+
+
+//tiles dashboard
+.tile-body-extra{line-height: 48px !important;}
+.tile-footer-extra{color: @gray; font-size: @font-size-small;}
+
+.profit-tile {
+	padding: 0;
+	.profit-info{
+		padding: 24px 0;
+		border-left: 1px solid @border-lighter;
+		.profit-tile-heading{text-align: center;}
+		.tile-body-profit{
+			text-align: center;
+			font-size: @font-size-h2;
+			font-weight: 400;
+			line-height: 48px;
+			position: relative;
+			z-index: 1;
+			//color: @indigo-500;
+		}
+		.profit-tile-footer{
+			text-align: center;
+			font-size: @font-size-small;
+			span{
+				color: @gray-500;
+			}
+		}
+	}
+}
+
+@media(max-width: @screen-sm-max){.col-md-6.pl-n,.col-md-6.pr-n{padding: 0!important;}}
+
+
+

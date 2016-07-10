@@ -1,0 +1,123 @@
+//
+// Rightbar/Infobar
+// --------------------------------------------------
+
+// Infobar basics
+
+	.infobar-wrapper {
+		position: fixed !important;
+		z-index: @zindex-navbar - 10;
+		top: -8px;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 300px;
+
+		border-left: 1px solid @border-darker;
+		background: @gray-1000;
+		z-index: @zindex-navbar - 1;
+
+		.backface-visibility(~"hidden");
+		&:extend(.scrollbar-custom all);
+	}
+
+
+	// Overlay Slimscroll Bugfix
+	body.infobar-overlay .infobar-wrapper #widgetarea {
+		padding-bottom: @navbar-height;
+	}
+
+// Position the Infobar
+
+	body {
+
+		&.infobar-overlay {
+			.infobar-wrapper {
+				.translate(320px,72px);
+			}
+
+			&.infobar-active .infobar-wrapper {
+				.translate(0px,72px)
+			}
+		}
+
+
+		&.infobar-offcanvas {
+			.infobar-wrapper {
+				.translate(320px,0px);
+			}
+
+			&.infobar-active {
+				#wrapper, > header {.translate(-320px,0px)}
+				> .infobar-wrapper {.translate(0px,0px)}
+			}
+		}
+
+		&.infobar-overlay .infobar-wrapper, 
+		&.infobar-offcanvas .infobar-wrapper, 
+		&.infobar-offcanvas #wrapper,
+		&.infobar-offcanvas #topnav {
+				   transition: transform 0.3s;
+		  		-o-transition: -o-transform 0.3s;
+		  	   -ms-transition: -ms-transform 0.3s;
+		   -webkit-transition: -webkit-transform 0.3s;
+		}
+	}
+
+	#layout-fixed .infobar-wrapper {
+		.translate(0px,0px);
+		border-left: 0;
+		overflow-x: hidden !important;
+	}
+
+	#layout-fixed .sidebar, #layout-fixed .sidebar-default {
+		border-right: 0;
+	}
+
+// Internal Infobar Stylings
+
+	.infobar {
+		.widget-heading {
+			border-bottom: 1px solid @grey-100;
+			padding: 8px;
+			margin-bottom: 8px;
+			text-transform: uppercase;
+			font-weight: 500;
+			
+		}
+
+		.widget-body {
+			padding: 16px;
+			border-bottom: 1px solid @grey-100;
+			&:extend(.clearfix all);
+		}
+		p {
+			color: rgba(0,0,0,0.54);
+			font-size: @font-size-base;
+		}
+	}
+
+
+
+	.contacts {
+		.media-body > span {font-weight: 500;}
+		a:hover {
+			text-decoration: none;
+		}
+		.contact-status {
+			display: block;
+			font-size: @font-size-small;
+			text-transform: uppercase;
+		}
+	}
+
+	.table-settings {
+		tr:first-child {
+			td {
+				border-top: none;
+			}
+		}
+		td:last-child {width: 50px;}
+	}
+
+	

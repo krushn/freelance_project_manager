@@ -1,0 +1,136 @@
+//
+// Custom Panels
+// --------------------------------------------------
+
+// FAQ 
+.faq-list.list-group {
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+	border-radius: @border-radius-base;
+	margin: 0 0 32px 0 !important;
+	a.list-group-item {
+		margin: 0;
+		padding: 13px 16px;
+		border: 0;
+		border-bottom: 1px solid @border-lighter;
+		color: @gray-dark;
+		.badge {margin-top: 2px;}
+		i {
+			color: @gray-lighter;
+			margin-right: 16px;
+		}
+		&:hover {
+			color: @gray-darker; 
+			background: #fff;
+			border: 0;
+			border-bottom: 1px solid @border-lighter; 
+			i {color: @gray-darker;}
+		}
+		&.active {
+			font-weight: 500; 
+			color: @gray-darker;
+			background-color: @gray-50;
+			i {color: @gray-darker;}
+			.badge {
+				background-color: @brand-primary;
+				color: #fff;
+			}
+		}
+		&:last-child {border-bottom: 0}
+	}
+}
+
+
+.panels-faq .panel .panel-heading h2 {
+	letter-spacing: 0;
+	text-transform: none;
+	font-size: @font-size-base;
+}
+
+
+// Profile Page
+
+	// Left Navigation
+
+		.panel-profile {
+			.panel-body {
+				padding: 16px;
+				.name {
+					font-size: @font-size-h4;
+					line-height: 24px;
+					color: @gray-darker;
+				}
+				.info {
+					font-size: @font-size-small;
+					line-height: @line-height-small;
+					color: @gray;
+				}
+				.about{
+					font-size: @font-size-base;
+					line-height: @line-height-small;
+					color: @gray;
+					padding: 32px 0;
+				}
+				text-align: center;
+				img { 
+					margin: 0 auto 16px;
+				}
+				ul {
+					margin-top: 32px;
+					margin-bottom: 0;
+					margin-left: 0;
+					li {
+						padding-left: 2px; 
+						padding-right: 2px;
+						a {
+							display: block;
+							width: 24px;
+							color: #fff;
+							border-radius: 100%;
+							text-align: center;
+							padding: 0;
+							height: 24px;
+							line-height: 24px;
+							i{
+								color: @brand-inverse;
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+		.profile-social-icon-bg(@profile-social-bg) {
+		    background-color: @profile-social-bg;
+		}
+
+		.panel-profile .panel-body ul li a {
+		    &.profile-facebook-icon {.profile-social-icon-bg(@brand-facebook); }
+		    &.profile-twitter-icon  {.profile-social-icon-bg(@brand-twitter); }
+		    &.profile-dribbble-icon {.profile-social-icon-bg(@brand-dribbble); }
+		} 
+
+
+	// About
+
+		.about-area {
+			margin-bottom: 32px;
+			h2, h3, h4 {
+				color: @gray;
+				margin-top: 0;
+				margin-bottom: 16px;
+			}
+			&:last-child {margin-bottom: 0;}
+			table {
+				> tbody > tr > th,
+				> tbody > tr > td {padding: 10px 0;}
+				margin: 0 !important;
+				a {
+					color: @gray-dark;
+				}
+			}
+		}
+
+	.profile-photos img {
+        cursor: pointer;
+    }

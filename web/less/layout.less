@@ -1,0 +1,418 @@
+//
+// December
+// (c) KaijuThemes
+//
+// The Theme Layout
+// --------------------------------------------------
+
+/* Some Base Fixes */
+
+:focus {outline:none;}
+::-moz-focus-inner {border:none;}
+
+
+/* Basic Layouts */
+html 					{position: relative;min-height: 100px;}
+html, body 				{height: 100%;}
+
+//Add top margin to any page with fixed header
+.navbar-fixed-top  {
+ 	+ #wrapper, + #layout-fixed {padding-top: 64px !important;}
+ }
+
+
+
+.navbar-fixed-top 		{width: 100%; position:fixed !important}
+
+#wrapper 				{display:table;width: 100%; table-layout: fixed; overflow: auto; height: 100%; position: relative;}
+#layout-static 			{display: table-row; height: 100%;}
+.static-sidebar-wrapper {display: table-cell; overflow: hidden;} 
+.static-sidebar-wrapper, .static-sidebar {
+	width: @sidebar-static-width;
+	transition-duration: 300ms;
+}
+.static-content-wrapper {display: table-cell; width: 100%;background: #f5f5f5;}
+.static-sidebar-wrapper, .static-content-wrapper {vertical-align: top;}
+footer					{background: transparent; padding: 5px 16px; ul {margin: 0 !important;}}
+
+
+// Offcanvas Effect
+@media (max-width: 640px) {
+	body {
+		.static-content {
+			transition-duration: 250ms;
+		}
+		.static-content-wrapper {
+			overflow-x: hidden;
+		}
+	}
+	body:not(.sidebar-collapsed) {
+		.static-content {
+			margin-right: -240px;
+		}
+	}
+	body.sidebar-collapsed {
+		.static-content {
+			margin-right: 0px;
+		}
+	}
+}
+
+// White Background
+
+    .static-content-wrapper.content-white {
+        background-color: #fff !important;
+    }
+
+//Full Width row
+.row > .full-width {
+	padding: 0;
+
+	.panel {
+		.panel-body {
+			padding: 16px;
+		}
+	}
+}
+
+// Sticky Footer
+	.fixed-content, .horizontal-nav #wrapper {
+		min-height: 100%;
+		margin-bottom: -@footer-height;
+		&:after {
+			content: "";
+			display: block;
+		}
+		+ footer, &:after {
+			height: @footer-height;
+		}
+		+ footer {
+			position: relative;
+		}
+	}
+
+
+//Footer at bottom
+	.static-content-wrapper {position: relative;}
+	.static-content {margin-bottom: @footer-height;}
+	footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: @footer-height;
+
+		h6 {font-weight: 400; font-size: @font-size-small; text-transform: uppercase;}
+	}
+
+	#back-to-top {color: @text-color}
+
+
+
+
+//Scroll sidebar
+
+	.sidebar-scroll {
+		position: relative;
+		.static-sidebar {position: fixed !important}
+	}
+
+	body.sidebar-hideon-collpase {
+		&.sidebar-collapsed .static-sidebar-wrapper {
+			display: none;
+		}
+		.static-sidebar-wrapper{
+			display: table-cell;
+		}
+	}
+
+
+
+/* Boxed Layout */
+
+	body.layout-boxed {
+		background: @boxed-background;
+		#topnav, #wrapper, footer {max-width: @boxed-width; margin: 0 auto;}
+
+		#wrapper {background: @body-bg;}
+	}
+
+
+
+/*Horizontal Navigation*/
+
+	.horizontal-nav {
+		#wrapper {display: block;}
+		.static-sidebar-wrapper {display: none;}
+		.static-content-wrapper {display: block;}
+		
+		#page-content {margin-left: 0; }
+		.navbar {margin-bottom: 0px;}
+
+		nav.navbar {
+			width: 100%;
+			z-index: @zindex-navbar - 10;
+		}
+
+		header.navbar {
+			z-index: @zindex-navbar ;
+		}
+
+		header.navbar-fixed-top + nav.navbar {
+			z-index: @zindex-navbar-fixed - 1; //supporting multiple navbar
+			margin-top: 64px;
+		}
+
+		#leftmenu-trigger {display: none;}
+	}
+
+
+	@media (min-width: @screen-sm-min) {
+		// Large Icon Nav
+		#horizontal-navbar.large-icons-nav .navbar-nav {
+			margin-bottom: 0;
+			> li {
+				min-width: 100px;
+				a {
+					padding: 14px 16px;
+				}
+				a > i {
+					font-size: 28px;
+					display: block;
+					text-align: center;
+					margin-top: 8px;
+					margin-right: 0;
+				}
+				> a > span {
+					display: block;
+					text-align: center;
+					margin-top: 16px;
+					text-transform: uppercase;
+					font-size: @font-size-small;
+					line-height: @line-height-small;
+					font-weight: 500;
+				}
+			}
+			
+		}
+	}
+
+	#horizontal-navbar .navbar-nav {
+		//li.dropdown:hover > ul.dropdown-menu {
+		//    display: block;    
+		//} //display submenu on hover - however we are using Smart Menus
+		> li {
+			> a {
+				padding: 22px 16px;
+				text-transform: uppercase;
+				> i {
+					margin-right: @padding-small-horizontal;
+				}
+			}
+			> a, li a {font-weight: 500;}
+			
+			@media (max-width: @screen-sm) {
+				i {
+					font-size: @font-size-large;
+					margin-right: @base-margin*2;
+				}
+			}
+		}
+	}
+
+
+
+
+@media (max-width: @screen-xs-max) { 
+	.page-content {padding: 0;}
+}
+
+
+/* Page Heading */
+.page-heading {background: @gray-150; padding: 16px 16px 32px 16px; margin-bottom: 16px; &:extend(.clearfix all);}
+.page-heading h1 {
+	float: left; margin: 0; line-height: 32px; font-weight: 300; font-size: 30px;
+	small {
+		display: block;
+	    font-size: 12px;
+	    font-weight: 400;
+	    margin-bottom: 8px;
+	    margin-top: 4px;
+	}
+}
+.page-heading .options {float: right;}
+
+
+/* Breadcrumb Mod */
+.page-content>.breadcrumb {
+	margin: 0 0 0 0;
+	padding: 8px 16px;
+	display: inherit;
+	border-bottom: 0;
+	background: #f1f1f1;
+	border-radius: 0;
+	font-size: @font-size-small;
+	line-height: 16px;
+	> li {
+		font-size: @font-size-small;
+		line-height: 16px;
+		a{
+			color: @gray;
+		}
+	}
+}
+
+.page-content > .page-heading + .breadcrumb {margin-top: 0;}
+
+
+// Hide some sections from being printed
+@media print {
+	.static-sidebar-wrapper, .demo-options, .page-heading, .page-content > .breadcrumb, footer {
+		display: none;
+	}
+}
+
+
+// Full Height Content
+.full-height-content {
+	.scroll-content {
+		padding-right: 15px;
+	}
+}
+
+
+
+
+
+
+// Coming Soon and Error Pages
+
+html.full-page-image, html.full-page-image body {
+	height: 99%;
+}
+
+.coming-soon {
+	background-color: #dedede;
+	
+    .overlay-on-image("../demo/stockphoto/blog_10.jpg", rgba(0,0,0,0.7));
+
+    .btn.btn-social {
+    	padding: 5px 10px;
+    	height: 32px;
+    	width: 32px;
+    }
+
+	.coming-soon-wrapper {
+
+		@media (min-width: @screen-sm) {
+			position: relative;
+			top: 50%;
+			margin-top: -250px;
+		}
+		
+			.countdown {
+				.time-block {
+					.rgba(white,0.3);
+					padding: 20px 0;
+					margin-bottom: 24px;
+					border-radius: 80px;
+
+					.digit, .digit-desc {
+						display: block;
+						line-height: 1;
+					}
+
+					.digit {
+						font-size: 36px;
+						font-weight: 400;
+						color: #fff;
+					}
+					.digit-desc {
+						padding-top: 4px;
+						font-size: @font-size-small;
+						text-transform: uppercase;
+						color: #fff;
+					}
+				}
+			}
+		
+
+		h1, p {
+			color: #fff;
+		}
+
+		.container {
+			text-align: center;
+			max-width: 500px;
+		}
+	}
+}
+
+body.error {
+	background-color: #dedede;
+
+	.overlay-on-image("../demo/stockphoto/blog_10.jpg", rgba(0,0,0,0.7));
+
+	.error-wrapper {
+		@media (min-width: @screen-sm) {
+			position: relative;
+			top:50%;
+			margin-top: -200px;
+		}
+
+		.container {
+			max-width: 450px;
+			text-align: center;
+		}
+
+		h1, p {
+			color: #fff;
+		}
+		a {
+			color: #eee;
+		}
+
+		h1 {
+			font-size: 96px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+//Registration, Sign up, etc. forms that require one page
+.focused-form {
+	height: 100%;
+	background: #fafafa;
+	padding: 0;
+	.static-sidebar-wrapper, header, footer {
+		display: none;
+	}
+	#wrapper {
+		padding-top: 0 !important;
+	}
+	.login-logo {
+		text-align: center;
+		display: block;
+		margin-top: 120px;
+		margin-bottom: 50px;
+	}
+}
+
+
+.infobar-overlay{
+	.extrabar-underlay {
+	    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+	    bottom: 0;
+	    display: none;
+	    left: 0;
+	    position: fixed;
+	    right: 0;
+	    top: 0;
+	    z-index: 998;
+	}
+}
+
+.infobar-overlay.infobar-active{
+	.extrabar-underlay{
+		display: block;
+	}
+}
