@@ -98,19 +98,19 @@ class Projects extends \yii\db\ActiveRecord
         if($row) return $row['total']; else return 0;
     }
 
-    public function getDayGrpah(){
+    public static function getDayGrpah(){
         $sql  = 'select sum(paid) as paid, DAY(date_added) as date from projects WHERE YEAR(date_added) = YEAR(NOW()) AND MONTH(date_added) = MONTH(NOW()) GROUP BY DAY(date_added)';
             
         return Yii::$app->db->createCommand($sql)->queryAll();
     }
 
-    public function getMonthGrpah(){
+    public static function getMonthGrpah(){
         $sql  = 'select sum(paid) as paid, MONTHNAME(date_added) as date from projects WHERE YEAR(date_added) = YEAR(NOW()) GROUP BY MONTH(date_added)';
             
         return Yii::$app->db->createCommand($sql)->queryAll();
     }
 
-    public function getYearGrpah(){
+    public static function getYearGrpah(){
         $sql  = 'select sum(paid) as paid, YEAR(date_added) as date from projects GROUP BY YEAR(date_added)';
             
         return Yii::$app->db->createCommand($sql)->queryAll();
