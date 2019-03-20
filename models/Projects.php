@@ -66,7 +66,7 @@ class Projects extends \yii\db\ActiveRecord
         return new ProjectsQuery(get_called_class());
     }
     
-    public function total_income(){
+    public static function total_income(){
         $sql  = 'select sum(paid) as total from projects';
             
         $row = Yii::$app->db->createCommand($sql)->queryOne();
@@ -74,7 +74,7 @@ class Projects extends \yii\db\ActiveRecord
         if($row) return $row['total']; else return 0;
     }
 
-    public function total_income_last_month(){
+    public static function total_income_last_month(){
         $sql  = 'select sum(paid) as total from projects WHERE YEAR(date_added) = YEAR(CURRENT_DATE - INTERVAL 1 MONTH) AND MONTH(date_added) = MONTH(CURRENT_DATE - INTERVAL 1 MONTH)';
             
         $row = Yii::$app->db->createCommand($sql)->queryOne();
@@ -82,7 +82,7 @@ class Projects extends \yii\db\ActiveRecord
         if($row) return $row['total']; else return 0;
     }
 
-    public function total_income_month(){
+    public static function total_income_month(){
         $sql  = 'select sum(paid) as total from projects WHERE YEAR(date_added) = YEAR(NOW()) AND MONTH(date_added) = MONTH(NOW())';
             
         $row = Yii::$app->db->createCommand($sql)->queryOne();
@@ -90,7 +90,7 @@ class Projects extends \yii\db\ActiveRecord
         if($row) return $row['total']; else return 0;
     }
 
-    public function total_income_year(){
+    public static function total_income_year(){
         $sql  = 'select sum(paid) as total from projects WHERE YEAR(date_added) = YEAR(NOW())';
             
         $row = Yii::$app->db->createCommand($sql)->queryOne();
