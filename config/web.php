@@ -11,7 +11,15 @@ $config = [
             'bundles' => [
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => []
-                ]
+                ],
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => [
+                        'js/jquery-1.10.2.min.js',
+                    ]
+                ],
             ]
         ],
         'request' => [
