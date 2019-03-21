@@ -579,7 +579,7 @@ window.onbeforeunload = function () {
 $.skylo('start');
 $.skylo('set', 50);
 
-$(window).load(function () {
+$(window).on('load', function () {
     // $('div#page-progress-loader').removeClass('show');
     $.skylo('end');
 });

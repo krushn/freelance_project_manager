@@ -11,7 +11,7 @@ $config = [
             'bundles' => [
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => []
-                ]
+                ],
             ]
         ],
         'request' => [

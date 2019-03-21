@@ -2,7 +2,11 @@
 
 /* @var $this yii\web\View */
 
+use app\assets\DashboardAsset;
+
 $this->title = 'Dashboard | Project Statistics';
+
+DashboardAsset::register($this);
 
 ?>
 
