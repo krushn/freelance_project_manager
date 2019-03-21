@@ -25,14 +25,10 @@ class AppAsset extends AssetBundle
         'plugins/codeprettifier/prettify.css',
         'plugins/dropdown.js/jquery.dropdown.css',
         'plugins/progress-skylo/skylo.css',
-        //'css/site.css',
         'js/datetimepicker/css/bootstrap-datetimepicker.min.css',
-        'js/morris/morris.css'
     ];
            
-    public $js = [
-        //'js/slimscroll.js',
-        //'js/jquery-1.10.2.min.js',        
+    public $js = [   
         'plugins/nanoScroller/js/jquery.nanoscroller.min.js',
         'js/enquire.min.js',
         'plugins/velocityjs/velocity.min.js',
@@ -41,9 +37,6 @@ class AppAsset extends AssetBundle
         'plugins/wijets/wijets.js',
         'plugins/codeprettifier/prettify.js',
 
-        'js/morris/raphael-min.js',
-        'js/morris/morris.min.js',
-        //'plugins/chartist/dist/chartist.min.js',
         'plugins/form-jasnyupload/fileinput.min.js',
         'plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js',
         'js/jquery-ui/jquery-ui-1.8.23.custom.min.js',
@@ -51,7 +44,6 @@ class AppAsset extends AssetBundle
         'plugins/bootstrap-material-design/js/material.min.js',
         'plugins/bootstrap-material-design/js/ripples.min.js',
         'js/application.js',
-        'js/dashboard.js',
         'js/datetimepicker/js/moment.js',
         'js/datetimepicker/js/bootstrap-datetimepicker.min.js',
     ];
